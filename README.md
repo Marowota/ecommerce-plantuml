@@ -14,11 +14,13 @@ Step 2: Install PlantUML and dependency using choco (cmd.exe with Administrator 
 
 choco install plantuml
 ```
-if u have install choco before, just run the second line
+if you have install choco before, just run the second line
+If it asking for install, input A (Yes for All)
 
 Step 3: Add PlantUML jar path in extension setting and set render to local
 ![Alt text](image.png)
 
+if you cant find the folder, find the option to show hidden folder, it normally is: C:\ProgramData\chocolatey\lib\plantuml\tools\plantuml.jar
 ![Alt text](image-1.png)
 
 ![Alt text](image-2.png)
