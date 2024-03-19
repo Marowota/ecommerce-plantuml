@@ -15,6 +15,8 @@ rectangle "Shop" {
     usecase (4. Quản lí đơn đặt hàng) as qlddh
     usecase (5. Quản lí người dùng) as qlnd
     usecase (6. Quản lí mã giảm giá) as qlmgg
+    usecase (7. Đăng nhập) as dn
+    usecase (8. Đăng ký) as dk
 }
 
 admin --- qlsp
@@ -22,15 +24,19 @@ admin --- qldmsp
 admin --- qlddh
 admin --- qlnd
 admin --- qlmgg
+admin --- dn
 
 qlsp --- customer
 qlgh --- customer
 qldmsp --- customer
 qlddh --- customer
 qlmgg --- customer
+dn --- customer
+dk --- customer
 
 staff --- qlsp
 staff --- qlddh
+staff --- dn
 
 
 @enduml
