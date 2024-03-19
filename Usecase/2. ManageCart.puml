@@ -1,0 +1,32 @@
+@startuml ManageCart
+
+left to right direction
+scale 3
+skin rose
+
+actor Customer as customer
+
+rectangle "2. Quản lý giỏ hàng" {
+    usecase (Thêm sản phẩm vào giỏ hàng) as tspvgh
+    usecase (Xem tổng giá tiền) as xtgt
+    usecase (Xem giá tiền sản phẩm) as xgtsp
+    usecase (Xem thông tin cơ bản của sản phẩm) as xttcbcsp
+    usecase (Sửa số lượng sản phẩm) as sslsp
+    usecase (Chọn sản phẩm để chỉnh sửa) as cspdcs
+    usecase (Thông báo khi hết hàng) as tbkhh
+    usecase (Sửa phân loại hàng sản phẩm) as splhsp
+    usecase (Xóa sản phẩm trong giỏ hàng) as xsptrgh
+    usecase (Xóa tất cả sản phẩm trong giỏ hàng) as xttcsptrgh
+}
+
+customer --- tspvgh
+customer --- xtgt
+customer --- xgtsp
+customer --- xttcbcsp
+customer --- sslsp
+customer --- cspdcs
+customer --- splhsp
+customer --- xsptrgh
+customer --- xttcsptrgh
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml GeneralUsecase
+skin rose
+scale 3
+
+left to right direction
+
+actor Admin as admin
+actor Customer as customer
+actor Staff as staff
+
+rectangle "Shop" {
+    usecase (1. Quản lí sản phẩm) as qlsp
+    usecase (2. Quản lí giỏ hàng) as qlgh
+    usecase (3. Quản lí danh mục sản phẩm) as qldmsp
+    usecase (4. Quản lí đơn đặt hàng) as qlddh
+    usecase (5. Quản lí người dùng) as qlnd
+    usecase (6. Quản lí mã giảm giá) as qlmgg
+}
+
+admin --- qlsp
+admin --- qldmsp
+admin --- qlddh
+admin --- qlnd
+admin --- qlmgg
+
+qlsp --- customer
+qlgh --- customer
+qldmsp --- customer
+qlddh --- customer
+qlmgg --- customer
+
+staff --- qlsp
+staff --- qlddh
+
+
+@enduml

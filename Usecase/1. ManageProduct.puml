@@ -1,0 +1,50 @@
+@startuml ManageProduct
+
+left to right direction
+scale 3
+skin rose
+
+actor Admin as admin
+actor Customer as customer
+actor Staff as staff
+
+rectangle "1. Quản lý sản phẩm" {
+    usecase (Thêm sản phẩm) as tsp
+    usecase (Xem danh sách sản phẩm) as xdssp
+    usecase (Xem thông tin sản phẩm) as xttsp
+    usecase (Sửa thông tin sản phẩm) as sttsp
+    usecase (Xóa sản phẩm) as xosp
+    usecase (Lọc sản phẩm) as lsp
+    usecase (Tìm kiếm sản phẩm) as tksp
+    usecase (Xem thống kê) as xtk
+    usecase (Kiểm tra số lượng tồn kho) as ktsltk
+    usecase (Xuất danh sách sản phẩm) as xudssp
+    usecase (Xem thống kê\nsố lượng sản phẩm) as xtkslsp
+    usecase (Xem thống kê\ndoanh thu sản phẩm) as xtkdtsp
+    usecase (Xem hống kê\nsố lượt bán sản phẩm) as xtkslbsp
+}
+
+admin --- tsp
+admin --- xttsp
+admin --- xosp
+admin --- sttsp
+admin --- lsp
+admin --- tksp
+admin --- xtk
+admin --- ktsltk
+admin --- xudssp
+admin --- xdssp
+
+xttsp ---- customer
+lsp ---- customer
+tksp ---- customer
+xdssp ---- customer
+
+staff --- xdssp
+staff --- xttsp
+
+xtk ...> xtkdtsp : <<extend>>
+xtk ...> xtkslbsp : <<extend>>
+xtk ...> xtkslsp : <<extend>>
+
+@enduml

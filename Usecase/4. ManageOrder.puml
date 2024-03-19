@@ -1,0 +1,49 @@
+@startuml ManageOrder
+
+left to right direction
+scale 3
+skin rose
+
+actor Admin as admin
+actor Customer as customer
+actor Staff as staff
+
+rectangle "4. Quản lý đơn đặt hàng" {
+    usecase (Xem thông tin đơn hàng) as xttdh
+    usecase (Xem danh sách đơn hàng) as xdsdh
+    usecase (Xem danh sách voucher) as xdsv
+    usecase (Xuất danh sách đơn hàng) as xudsdh
+    usecase (Tạo đơn hàng) as tdh
+    usecase (Hủy đơn hàng) as hdh
+    usecase (Tìm kiếm đơn hàng) as tkdh
+    usecase (Báo cáo, thống kê) as bctk
+    usecase (Báo cáo thống kê trạng thái đơn hàng) as bctkttdh
+    usecase (Báo cáo doanh thu) as bcdt
+}
+
+admin --- xttdh
+admin --- xdsdh
+admin --- xdsv
+admin --- xudsdh    
+admin --- tdh
+admin --- hdh
+admin --- tkdh
+admin --- bctk
+
+xttdh --- customer
+xdsdh --- customer
+xdsv --- customer
+tdh --- customer
+hdh --- customer
+tkdh --- customer
+
+staff --- xttdh
+staff --- xdsdh
+staff --- xdsv
+staff --- hdh
+
+bctk ..> bctkttdh: <<extend>>
+bctk ..> bcdt: <<extend>>s
+
+
+@enduml
