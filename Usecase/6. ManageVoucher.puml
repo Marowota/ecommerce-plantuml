@@ -1,0 +1,30 @@
+@startuml ManageVoucher
+
+left to right direction
+scale 3
+skin rose
+
+actor Admin as admin
+actor Customer as customer
+
+rectangle "6. Quản lý mã giảm giá" {
+    usecase (Tạo mã giảm giá) as tmgg
+    usecase (Xem thông tin mã giảm giá) as xttmgg
+    usecase (Xem danh sách mã giảm giá) as xdsmgg
+    usecase (Sửa mã giảm giá) as smgg
+    usecase (Xóa mã giảm giá) as xmgg
+    usecase (Tìm kiếm mã giảm giá) as tkmgg
+}
+
+admin --- tmgg
+admin --- xttmgg
+admin --- xdsmgg
+admin --- smgg
+admin --- xmgg
+admin --- tkmgg
+
+xttmgg --- customer
+xdsmgg --- customer
+tkmgg --- customer
+
+@enduml

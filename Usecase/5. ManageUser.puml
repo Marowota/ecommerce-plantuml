@@ -1,0 +1,29 @@
+@startuml ManageUser
+
+left to right direction
+scale 3
+skin rose
+
+actor Admin as admin
+
+rectangle "5. Quản lý người dùng" {
+    usecase (Tạo tài khoản) as ttknd
+    usecase (Xem danh sách tài khoản) as xdstk
+    usecase (Xem thông tin tài khoản) as xtttk
+    usecase (Sửa thông tin tài khoản) as scttk
+    usecase (Xóa tài khoản ) as xtk
+    usecase (Tìm kiếm tài khoản) as tktk
+    usecase (Báo cáo thống kê\nsố lượng tài khoản đang tồn tại) as bctksltkdtt
+    usecase (Báo cáo doanh thu\ncủa từng tài khoản) as bcdtcttk
+}
+
+admin --- ttknd
+admin --- xdstk
+admin --- xtttk
+admin --- scttk
+admin --- xtk
+admin --- tktk
+admin --- bctksltkdtt
+admin --- bcdtcttk
+
+@enduml
