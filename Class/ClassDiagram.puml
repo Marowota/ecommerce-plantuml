@@ -128,9 +128,16 @@ class Order{
     - shipping_fee: double
     - note: string
     - created_at: datetime
-    - updated_at: datetime
     - address_id: long
     - user_id: long
+}
+
+' Notification
+class Notification{
+    - id: long
+    - title: string
+    - content: string
+    - created_at: datetime
 }
 
 Product "1" *-- "1..*" ProductSpecification
