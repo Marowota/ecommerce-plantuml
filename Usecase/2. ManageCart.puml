@@ -17,6 +17,7 @@ rectangle "2. Quản lý giỏ hàng" {
     usecase (Sửa phân loại hàng sản phẩm) as splhsp
     usecase (Xóa sản phẩm trong giỏ hàng) as xsptrgh
     usecase (Xóa tất cả sản phẩm trong giỏ hàng) as xttcsptrgh
+    usecase (Xem thông báo khi hết hàng) as xtbkhh
 }
 
 customer --- tspvgh
@@ -28,5 +29,6 @@ customer --- cspdcs
 customer --- splhsp
 customer --- xsptrgh
 customer --- xttcsptrgh
+customer --- xtbkhh
 
 @enduml

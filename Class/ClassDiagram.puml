@@ -1,0 +1,163 @@
+@startuml Class Diagram
+
+skin rose
+skinparam classAttributeIconSize 0
+' skinparam linetype ortho
+skinparam linetype polyline
+hide circle
+scale 3
+
+' Product
+class Product{
+    - id: long
+    - name: string
+    - brand: string
+    - url_key: string
+    - description: string
+    - price: double
+    - discount_rate: double
+    - thumbnail: string
+    - review_count: int
+    - rating_average: double
+    - quantity_sold: int
+    - highlight_id: long
+    - seller_id: long
+    - product_specification_id: long
+}
+
+class ProductSpecification{
+    - id: long
+    - name: string
+    - value: string
+    - product_id: long
+}
+
+class ProductOption{
+    - id: long
+    - name: string
+    - product_id: long
+}
+
+class ProductCategory{
+    - id: long
+    - product_id: long
+    - category_id: long
+}
+
+class ProductHighlight{
+    - id: long
+    - title: string
+    - highlight_item_id: long
+}
+
+class HighlightItem{
+    - id: long
+    - description: string
+}
+
+class Seller{
+    - id: long
+    - name: string
+    - logo: string
+    - slug: string
+}
+
+' Category
+class Category{
+    - id: long
+    - name: string
+    - url_key: string
+    - parent_id: long
+    - is_primary: boolean
+}
+
+' Review
+class Review{
+    - id: long
+    - rating: int
+    - title: string
+    - content: string
+    - product_id: long
+}
+
+' User
+class User{
+    - id: long
+    - name: string
+    - email: string
+    - phone: string
+    - password: string
+    - avatar: string
+    - role: string
+}
+
+class Address{
+    - id: long
+    - name: string
+    - phone: string
+    - company: string
+    - province: string
+    - district: string
+    - ward: string
+    - address: string
+    - address_type: string
+    - is_default: boolean
+    - user_id: long
+}
+
+
+' Cart
+class Cart{
+    - id: long
+    - user_id: long
+}
+
+class CartDetail{
+    - id: long
+    - quantity: int
+    - seller: string
+    - cart_id: long
+    - product_id: long
+}
+
+' Order
+class Order{
+    - id: long
+    - total: double
+    - status: string
+    - payment_method: string
+    - payment_status: string
+    - shipping_fee: double
+    - note: string
+    - created_at: datetime
+    - address_id: long
+    - user_id: long
+}
+
+' Notification
+class Notification{
+    - id: long
+    - title: string
+    - content: string
+    - created_at: datetime
+}
+
+Product "1" *-- "1..*" ProductSpecification
+Product "1" *-- "1..*" ProductOption
+Product "1..* "--* "1" Seller
+Product "1" *-- "1..*" Review
+Product "1" *-- "1..*" ProductHighlight
+ProductHighlight "1" *-- "1..*" HighlightItem
+
+ProductCategory "1" -- "1..*" Product
+ProductCategory "1" -- "1..*" Category
+
+User "1" *-- "1..*" Address
+User "1" *-- "1..*" Review
+
+Cart "1" --* "1..*" User
+Cart "1" *-- "1..*" CartDetail
+
+Order "1..*" --* "1" User
+Order "1" -- "1..*" Address
+@enduml
