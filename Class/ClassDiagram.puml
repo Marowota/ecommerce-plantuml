@@ -16,17 +16,19 @@ class Product{
     - description: string
     - price: double
     - discount_rate: double
-    - thumbnail: string
+    - thumbnail_url: string
+    - images: List<string>
     - review_count: int
     - rating_average: double
     - quantity_sold: int
-    - highlight: HighlightItem
+    - highlight: List<HighlightItem>
     - seller: Seller
-    - suplier: Suplier
-    - product_specification: List<ProductSpecification>
+    - supplier: Supplier
+    - categories: List<Category>
+    - product_specifications: List<ProductSpecification>
 }
 
-class Suplier{
+class Supplier{
     - id: long
     - name: string
 }
@@ -52,12 +54,6 @@ class ProductCategory{
 
 class ProductHighlight{
     - id: long
-    - title: string
-    - highlight_item: List<HighlightItem>
-}
-
-class HighlightItem{
-    - id: long
     - description: string
 }
 
@@ -73,6 +69,7 @@ class Category{
     - id: long
     - name: string
     - url_key: string
+    - thumbnail_url: string
     - parent_id: long
     - is_primary: boolean
 }
@@ -84,6 +81,7 @@ class Review{
     - title: string
     - content: string
     - product: Product
+    - user: User
 }
 
 ' User
@@ -95,7 +93,10 @@ class User{
     - password: string
     - avatar: string
     - role: string
-    - address: List<Address>
+    - cart: Cart
+    - addresses: List<Address>
+    - reviews: List<Review>
+    - orders: List<Order>
 }
 
 class Address{
@@ -116,14 +117,13 @@ class Address{
 ' Cart
 class Cart{
     - id: long
-    - user: User
-    - cart_detail: List<CartDetail>
+    - cart_details: List<CartDetail>
 }
 
 class CartDetail{
     - id: long
     - quantity: int
-    - seller: string
+    - seller: Seller
     - cart: Cart
     - product: Product
 }
@@ -140,6 +140,7 @@ class Order{
     - created_at: datetime
     - address: Address
     - user: User
+    - products: List<Product>
 }
 
 ' Notification
@@ -153,10 +154,10 @@ class Notification{
 Product "1" *-- "1..*" ProductSpecification
 Product "1" *-- "1..*" ProductOption
 Product "1..* "--* "1" Seller
-Product "1" o-- "1..*" Suplier
+Product "1" o-- "1..*" Supplier
 Product "1" *-- "1..*" Review
+Product "1..*" --o "1" Order
 Product "1" *-- "1..*" ProductHighlight
-ProductHighlight "1" *-- "1..*" HighlightItem
 
 ProductCategory "1" -- "1..*" Product
 ProductCategory "1" -- "1..*" Category
@@ -169,4 +170,5 @@ Cart "1" *-- "1..*" CartDetail
 
 Order "1..*" --* "1" User
 Order "1" -- "1..*" Address
+
 @enduml
