@@ -4,6 +4,8 @@ skin rose
 skinparam classAttributeIconSize 0
 ' skinparam linetype ortho
 skinparam linetype polyline
+hide circle
+scale 3
 
 ' Product
 class Product{
