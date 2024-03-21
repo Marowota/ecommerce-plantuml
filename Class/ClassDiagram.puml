@@ -22,7 +22,13 @@ class Product{
     - quantity_sold: int
     - highlight: HighlightItem
     - seller: Seller
+    - suplier: Suplier
     - product_specification: List<ProductSpecification>
+}
+
+class Suplier{
+    - id: long
+    - name: string
 }
 
 class ProductSpecification{
@@ -147,6 +153,7 @@ class Notification{
 Product "1" *-- "1..*" ProductSpecification
 Product "1" *-- "1..*" ProductOption
 Product "1..* "--* "1" Seller
+Product "1" o-- "1..*" Suplier
 Product "1" *-- "1..*" Review
 Product "1" *-- "1..*" ProductHighlight
 ProductHighlight "1" *-- "1..*" HighlightItem
