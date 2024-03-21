@@ -9,14 +9,16 @@ actor Customer as customer
 actor Staff as staff
 
 rectangle "Shop" {
-    usecase (1. Quản lí sản phẩm) as qlsp
-    usecase (2. Quản lí giỏ hàng) as qlgh
-    usecase (3. Quản lí danh mục sản phẩm) as qldmsp
-    usecase (4. Quản lí đơn đặt hàng) as qlddh
-    usecase (5. Quản lí người dùng) as qlnd
-    usecase (6. Quản lí mã giảm giá) as qlmgg
-    usecase (7. Đăng nhập) as dn
-    usecase (8. Đăng ký) as dk
+    usecase (1. Quản lý sản phẩm) as qlsp
+    usecase (2. Quản lý giỏ hàng) as qlgh
+    usecase (3. Quản lý danh mục sản phẩm) as qldmsp
+    usecase (4. Quản lý đơn đặt hàng) as qlddh
+    usecase (5. Quản lý người dùng) as qlnd
+    usecase (6. Quản lý mã giảm giá) as qlmgg
+    usecase (7. Quản lý thông báo) as qltb
+    usecase (8. Đăng nhập) as dn
+    usecase (9. Đăng ký) as dk
+
 }
 
 admin --- qlsp
@@ -25,6 +27,7 @@ admin --- qlddh
 admin --- qlnd
 admin --- qlmgg
 admin --- dn
+admin --- qltb
 
 qlsp --- customer
 qlgh --- customer
@@ -33,10 +36,12 @@ qlddh --- customer
 qlmgg --- customer
 dn --- customer
 dk --- customer
+qltb --- customer
 
-staff --- qlsp
+staff - qlsp
 staff --- qlddh
 staff --- dn
+staff --- qltb
 
 
 @enduml

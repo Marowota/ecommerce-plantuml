@@ -17,7 +17,6 @@ rectangle "1. Quản lý sản phẩm" {
     usecase (Lọc sản phẩm) as lsp
     usecase (Tìm kiếm sản phẩm) as tksp
     usecase (Xem thống kê) as xtk
-    usecase (Kiểm tra số lượng tồn kho) as ktsltk
     usecase (Xuất danh sách sản phẩm) as xudssp
     usecase (Xem thống kê\nsố lượng sản phẩm) as xtkslsp
     usecase (Xem thống kê\ndoanh thu sản phẩm) as xtkdtsp
@@ -31,20 +30,24 @@ admin --- sttsp
 admin --- lsp
 admin --- tksp
 admin --- xtk
-admin --- ktsltk
 admin --- xudssp
-admin --- xdssp
 
-xttsp ---- customer
-lsp ---- customer
-tksp ---- customer
-xdssp ---- customer
+xttsp --- customer
+lsp --- customer
+tksp --- customer
 
-staff --- xdssp
 staff --- xttsp
+staff --- lsp
+staff --- tksp
 
 xtk ...> xtkdtsp : <<extend>>
 xtk ...> xtkslbsp : <<extend>>
 xtk ...> xtkslsp : <<extend>>
+
+tsp <... xdssp : <<include>>
+xttsp <... xdssp : <<include>>
+lsp <... xdssp : <<include>>
+tksp <... xdssp : <<include>>
+xudssp <... xdssp : <<include>>
 
 @enduml

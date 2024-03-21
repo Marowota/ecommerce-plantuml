@@ -6,6 +6,7 @@ skin rose
 
 actor Admin as admin
 actor Customer as customer
+actor Staff as staff
 
 rectangle "Quản lí danh mục sản phẩm" {
     usecase (Thêm danh mục) as tdm
@@ -13,9 +14,7 @@ rectangle "Quản lí danh mục sản phẩm" {
     usecase (Xem thông tin danh mục) as xttdm
     usecase (Xuất danh sách danh mục) as xudsdm
     usecase (Xóa danh mục) as xodm
-    usecase (Sửa danh sách sản phẩm của danh mục) as sdssptcdm
     usecase (Sửa thông tin danh mục) as sttdm
-    usecase (Tìm kiếm danh mục) as tkdm
     usecase (Xem thống kê) as xtk
     usecase (Xem thống kê số lượng sản phẩm\ntheo danh mục) as tkslsptdm
     usecase (Xem thống kê doanh thu\ntừ danh mục) as tkdttdm
@@ -26,18 +25,19 @@ admin --- tdm
 admin --- xttdm
 admin --- xudsdm
 admin --- xodm
-admin --- sdssptcdm
 admin --- sttdm
-admin --- tkdm
 admin --- xtk
-admin --- xdsdm
 
 customer --- xttdm
-customer --- tkdm
-customer --- xdsdm
+
+staff --- xttdm
 
 xtk ..> tkslsptdm : <<extend>>
 xtk ..> tkdttdm : <<extend>>
 xtk ..> tkslbtdm : <<extend>>
+
+tdm <.. xdsdm : <<include>>
+xttdm <.. xdsdm : <<include>>
+xudsdm <.. xdsdm : <<include>>
 
 @enduml
