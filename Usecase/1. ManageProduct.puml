@@ -21,7 +21,7 @@ rectangle "1. Quản lý sản phẩm" {
     usecase (Xuất danh sách sản phẩm) as xudssp
     usecase (Xem thống kê\nsố lượng sản phẩm) as xtkslsp
     usecase (Xem thống kê\ndoanh thu sản phẩm) as xtkdtsp
-    usecase (Xem hống kê\nsố lượt bán sản phẩm) as xtkslbsp
+    usecase (Xem thống kê\nsố lượt bán sản phẩm) as xtkslbsp
 }
 
 admin --- tsp

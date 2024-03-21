@@ -20,34 +20,34 @@ class Product{
     - review_count: int
     - rating_average: double
     - quantity_sold: int
-    - highlight_id: long
-    - seller_id: long
-    - product_specification_id: long
+    - highlight: HighlightItem
+    - seller: Seller
+    - product_specification: List<ProductSpecification>
 }
 
 class ProductSpecification{
     - id: long
     - name: string
     - value: string
-    - product_id: long
+    - product: Product
 }
 
 class ProductOption{
     - id: long
     - name: string
-    - product_id: long
+    - product: Product
 }
 
 class ProductCategory{
     - id: long
-    - product_id: long
-    - category_id: long
+    - product: Product
+    - category: Category
 }
 
 class ProductHighlight{
     - id: long
     - title: string
-    - highlight_item_id: long
+    - highlight_item: List<HighlightItem>
 }
 
 class HighlightItem{
@@ -77,7 +77,7 @@ class Review{
     - rating: int
     - title: string
     - content: string
-    - product_id: long
+    - product: Product
 }
 
 ' User
@@ -89,6 +89,7 @@ class User{
     - password: string
     - avatar: string
     - role: string
+    - address: List<Address>
 }
 
 class Address{
@@ -102,22 +103,23 @@ class Address{
     - address: string
     - address_type: string
     - is_default: boolean
-    - user_id: long
+    - user: User
 }
 
 
 ' Cart
 class Cart{
     - id: long
-    - user_id: long
+    - user: User
+    - cart_detail: List<CartDetail>
 }
 
 class CartDetail{
     - id: long
     - quantity: int
     - seller: string
-    - cart_id: long
-    - product_id: long
+    - cart: Cart
+    - product: Product
 }
 
 ' Order
@@ -130,8 +132,8 @@ class Order{
     - shipping_fee: double
     - note: string
     - created_at: datetime
-    - address_id: long
-    - user_id: long
+    - address: Address
+    - user: User
 }
 
 ' Notification
