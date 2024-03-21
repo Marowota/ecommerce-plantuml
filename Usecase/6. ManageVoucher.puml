@@ -18,13 +18,15 @@ rectangle "6. Quản lý mã giảm giá" {
 
 admin --- tmgg
 admin --- xttmgg
-admin --- xdsmgg
 admin --- smgg
 admin --- xmgg
 admin --- tkmgg
 
-xttmgg --- customer
-xdsmgg --- customer
-tkmgg --- customer
+xttmgg -- customer
+tkmgg -- customer
+
+tmgg <.. xdsmgg : <<include>>
+xttmgg <.. xdsmgg : <<include>>
+tkmgg <.. xdsmgg : <<include>>
 
 @enduml

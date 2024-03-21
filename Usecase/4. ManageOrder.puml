@@ -22,7 +22,6 @@ rectangle "4. Quản lý đơn đặt hàng" {
 }
 
 admin --- xttdh
-admin --- xdsdh
 admin --- xdsv
 admin --- xudsdh    
 admin --- tdh
@@ -31,19 +30,22 @@ admin --- tkdh
 admin --- bctk
 
 xttdh --- customer
-xdsdh --- customer
 xdsv --- customer
 tdh --- customer
 hdh --- customer
 tkdh --- customer
 
+staff --- tdh
 staff --- xttdh
-staff --- xdsdh
 staff --- xdsv
 staff --- hdh
 
 bctk ..> bctkttdh: <<extend>>
-bctk ..> bcdt: <<extend>>s
+bctk ..> bcdt: <<extend>>
+xudsdh <.. xdsdh : <<include>>
+tkdh <.. xdsdh : <<include>>
+tdh <.. xdsdh : <<include>>
+xttdh <.. xdsdh : <<include>>
 
 
 @enduml
