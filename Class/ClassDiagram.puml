@@ -81,11 +81,20 @@ class Review{
     - title: string
     - content: string
     - product: Product
-    - user: User
+    - user: ApplicationUser
 }
 
 ' User
-class User{
+class ApplicationUser{
+    
+    - cart: Cart
+    - addresses: List<Address>
+    - reviews: List<Review>
+    - orders: List<Order>
+}
+
+
+class Account{
     - id: long
     - name: string
     - email: string
@@ -93,10 +102,14 @@ class User{
     - password: string
     - avatar: string
     - role: string
-    - cart: Cart
-    - addresses: List<Address>
-    - reviews: List<Review>
-    - orders: List<Order>
+}
+
+class Manager{
+    
+}
+
+class Employee{
+    
 }
 
 class Address{
@@ -110,7 +123,7 @@ class Address{
     - address: string
     - address_type: string
     - is_default: boolean
-    - user: User
+    - user: ApplicationUser
 }
 
 
@@ -139,7 +152,7 @@ class Order{
     - note: string
     - created_at: datetime
     - address: Address
-    - user: User
+    - user: ApplicationUser
     - products: List<Product>
 }
 
@@ -162,13 +175,17 @@ Product "1" *-- "1..*" ProductHighlight
 ProductCategory "1" -- "1..*" Product
 ProductCategory "1" -- "1..*" Category
 
-User "1" *-- "1..*" Address
-User "1" *-- "1..*" Review
+ApplicationUser "1" *-- "1..*" Address
+ApplicationUser "1" *-- "1..*" Review
 
-Cart "1" --* "1..*" User
+Cart "1" --* "1..*" ApplicationUser
 Cart "1" *-- "1..*" CartDetail
 
-Order "1..*" --* "1" User
+Order "1..*" --* "1" ApplicationUser
 Order "1" -- "1..*" Address
+
+Account <|-- ApplicationUser
+Account <|-- Manager
+Account <|-- Employee
 
 @enduml
