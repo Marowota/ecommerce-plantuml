@@ -1,0 +1,57 @@
+@startuml
+actor ":Admin" as admin
+participant ":System" as system
+participant ":Database" as database
+
+' Xem danh sách sản phẩm 
+group Xem danh sách sản phẩm
+admin -> system: 1. Yêu cầu xem DS sản phẩm
+system -> database: 2. Truy vấn dữ liệu DS sản phẩm
+database -->> system: 3. Trả về dữ liệu DS sản phẩm(ProductList)
+system -->> admin: 4. Hiển thị DS sản phẩm(ProductList)
+end
+
+' Xem chi tiết sản phẩm
+group Xem chi tiết sản phẩm
+admin -> system: 5. Yêu cầu xem chi tiết sản phẩm(ProductID)
+system -> database: 6. Truy vấn dữ liệu chi tiết sản phẩm(ProductID)
+database -->> system: 7. Trả về dữ liệu chi tiết sản phẩm(ProductDetail)
+system -->> admin: 8. Hiển thị chi tiết sản phẩm(ProductDetail)
+end
+
+' Thêm sản phẩm
+group Thêm sản phẩm
+admin -> system: 9. Nhập thông tin sản phẩm mới(ProductData)
+system -> system : 10. Kiểm tra thông tin nhập
+alt Không hợp lệ
+    system -->> admin: 11. Hiển thị thông báo lỗi
+else Hợp lệ
+    system -> database: 12. Thêm sản phẩm(ProductData)
+    database -->> system: 13. Trả về kết quả thêm sản phẩm
+    system -->> admin: 14. Hiển thị thông báo thêm sản phẩm
+end
+end
+
+
+' Sửa sản phẩm
+group Sửa sản phẩm
+admin -> system: 15. Cập nhật thông tin sản phẩm(ProductData)
+system -> system : 16. Kiểm tra thông tin cập nhập
+alt Không hợp lệ
+    system -->> admin: 17. Hiển thị thông báo lỗi
+else Hợp lệ
+    system -> database: 18. Cập nhật sản phẩm(ProductID, ProductData)
+    database -->> system: 19. Trả về kết quả cập nhật sản phẩm
+    system -->> admin: 20. Hiển thị thông báo cập nhật sản phẩm
+end
+end
+
+group Xóa sản phẩm
+admin -> system: 21. Xác nhận xóa sản phẩm(ProductID)
+system -> database: 22. Xóa sản phẩm(ProductID)
+database -->> system: 23. Trả về kết quả xóa sản phẩm
+system -->> admin: 24. Hiển thị thông báo xóa sản phẩm
+end
+
+' Xóa sản phẩm
+@enduml
