@@ -8,16 +8,16 @@ actor Admin as admin
 actor Customer as customer
 actor Staff as staff
 
-rectangle "Shop" {
-    usecase (1. Quản lý sản phẩm) as qlsp
-    usecase (2. Quản lý giỏ hàng) as qlgh
-    usecase (3. Quản lý danh mục sản phẩm) as qldmsp
-    usecase (4. Quản lý đơn đặt hàng) as qlddh
-    usecase (5. Quản lý người dùng) as qlnd
-    usecase (6. Quản lý mã giảm giá) as qlmgg
-    usecase (7. Quản lý thông báo) as qltb
-    usecase (8. Đăng nhập) as dn
-    usecase (9. Đăng ký) as dk
+rectangle "Harbe System" {
+    usecase (Manage product) as qlsp
+    usecase (Manage cart) as qlgh
+    usecase (Manage category) as qldmsp
+    usecase (Manage order) as qlddh
+    usecase (Manage account) as qlnd
+    usecase (Manage voucher) as qlmgg
+    usecase (Manage notification) as qltb
+    usecase (Sign in) as dn
+    usecase (Sign up) as dk
 
 }
 

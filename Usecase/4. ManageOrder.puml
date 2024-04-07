@@ -8,17 +8,15 @@ actor Admin as admin
 actor Customer as customer
 actor Staff as staff
 
-rectangle "4. Quản lý đơn đặt hàng" {
-    usecase (Xem thông tin đơn hàng) as xttdh
-    usecase (Xem danh sách đơn hàng) as xdsdh
-    usecase (Xem danh sách voucher) as xdsv
-    usecase (Xuất danh sách đơn hàng) as xudsdh
-    usecase (Tạo đơn hàng) as tdh
-    usecase (Hủy đơn hàng) as hdh
-    usecase (Tìm kiếm đơn hàng) as tkdh
-    usecase (Báo cáo, thống kê) as bctk
-    usecase (Báo cáo thống kê trạng thái đơn hàng) as bctkttdh
-    usecase (Báo cáo doanh thu) as bcdt
+rectangle "Manage order" {
+    usecase (View order info) as xttdh
+    usecase (View order list) as xdsdh
+    usecase (View voucher list) as xdsv
+    usecase (Export order list) as xudsdh
+    usecase (Create order) as tdh
+    usecase (Cancel order) as hdh
+    usecase (Search order) as tkdh
+    usecase (View order statistics) as xtkdh
 }
 
 admin --- xttdh
@@ -27,7 +25,7 @@ admin --- xudsdh
 admin --- tdh
 admin --- hdh
 admin --- tkdh
-admin --- bctk
+admin --- xtkdh
 
 xttdh --- customer
 xdsv --- customer
@@ -40,8 +38,6 @@ staff --- xttdh
 staff --- xdsv
 staff --- hdh
 
-bctk ..> bctkttdh: <<extend>>
-bctk ..> bcdt: <<extend>>
 xudsdh <.. xdsdh : <<include>>
 tkdh <.. xdsdh : <<include>>
 tdh <.. xdsdh : <<include>>
