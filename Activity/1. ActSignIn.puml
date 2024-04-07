@@ -25,7 +25,7 @@ start
 :8. Query account info\nby username;
 :9. Return account info\nby username;
 |Authentication\nService|
-:10. Check hashed password;
+:10. Check username\nand password;
 if () then (user not exist\nor wrong password)
 :11.1. Return error;
 |Authentication\nController|
