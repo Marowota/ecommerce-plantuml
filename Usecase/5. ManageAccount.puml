@@ -1,0 +1,30 @@
+@startuml ManageUser
+
+left to right direction
+scale 3
+skin rose
+
+actor Admin as admin
+
+rectangle "Manage account" {
+    usecase (Search account) as tktk
+    usecase (Create account) as ttk
+    usecase (View account list) as xdstk
+    usecase (View account info) as xtttk
+    usecase (Update account info) as scttk
+    usecase (Delete account) as xtk
+    usecase (View account statistics) as xtktk
+}
+
+admin --- ttk
+admin --- xtttk
+admin --- scttk
+admin --- xtk
+admin --- tktk
+admin --- xtktk
+
+ttk <.. xdstk : <<include>>
+xtttk <.. xdstk : <<include>>
+tktk <.. xdstk : <<include>>
+
+@enduml

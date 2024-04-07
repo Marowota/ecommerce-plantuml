@@ -9,12 +9,12 @@ actor Admin as admin
 actor Customer as customer
 actor Staff as staff
 
-rectangle "7. Quản lí thông báo" {
-    usecase (Thêm thông báo) as ttb
-    usecase (Xem danh sách thông báo) as xdstb
-    usecase (Xem thông tin thông báo) as xtttb
-    usecase (Sửa thông báo) as stb
-    usecase (Xóa thông báo) as xtb
+rectangle "Manage notification" {
+    usecase (Create notification) as ttb
+    usecase (View notification list) as xdstb
+    usecase (View notification info) as xtttb
+    usecase (Update notification) as stb
+    usecase (Delete notification) as xtb
 }
 
 admin --- ttb

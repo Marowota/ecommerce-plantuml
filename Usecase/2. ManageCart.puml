@@ -6,15 +6,14 @@ skin rose
 
 actor Customer as customer
 
-rectangle "2. Quản lý giỏ hàng" {
-    usecase (Thêm sản phẩm vào giỏ hàng) as tspvgh
-    usecase (Xem tổng giá tiền) as xtgt
-    usecase (Xem thông tin cơ bản của sản phẩm) as xttcbcsp
-    usecase (Sửa số lượng sản phẩm) as sslsp
-    usecase (Sửa phân loại hàng sản phẩm) as splhsp
-    usecase (Xóa sản phẩm trong giỏ hàng) as xsptrgh
-    usecase (Xóa tất cả sản phẩm trong giỏ hàng) as xttcsptrgh
-    usecase (Xem thông báo khi hết hàng) as xtbkhh
+rectangle "Manage cart" {
+    usecase (Add product to cart) as tspvgh
+    usecase (View total price) as xtgt
+    usecase (View basic product info) as xttcbcsp
+    usecase (Update product quantity) as sslsp
+    usecase (Update product type) as splhsp
+    usecase (Delete product in cart) as xsptrgh
+    usecase (Delete all products in the cart) as xttcsptrgh
 }
 
 customer --- tspvgh
@@ -24,6 +23,5 @@ customer --- sslsp
 customer --- splhsp
 customer --- xsptrgh
 customer --- xttcsptrgh
-customer --- xtbkhh
 
 @enduml

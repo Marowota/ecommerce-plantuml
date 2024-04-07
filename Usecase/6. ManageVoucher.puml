@@ -8,12 +8,12 @@ actor Admin as admin
 actor Customer as customer
 
 rectangle "6. Quản lý mã giảm giá" {
-    usecase (Tạo mã giảm giá) as tmgg
-    usecase (Xem thông tin mã giảm giá) as xttmgg
-    usecase (Xem danh sách mã giảm giá) as xdsmgg
-    usecase (Sửa mã giảm giá) as smgg
-    usecase (Xóa mã giảm giá) as xmgg
-    usecase (Tìm kiếm mã giảm giá) as tkmgg
+    usecase (Create voucher) as tmgg
+    usecase (View voucher info) as xttmgg
+    usecase (View voucher list) as xdsmgg
+    usecase (Update voucher info) as smgg
+    usecase (Delete voucher) as xmgg
+    usecase (Search voucher) as tkmgg
 }
 
 admin --- tmgg
