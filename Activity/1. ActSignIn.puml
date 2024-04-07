@@ -7,7 +7,7 @@ scale 3
 |User\nInterface|
 |Authentication\nController|
 |Authentication\nService|
-|Account\nRepository|
+|Application User\nRepository|
 |User\nInterface|
 start
 :1. Display sign in page;
@@ -20,12 +20,12 @@ start
 :5. Send sign in request\nand username, password;
 |Authentication\nService|
 :6. Hash password;
-:7. Request account info\nby username;
-|Account\nRepository|
-:8. Query account info\nby username;
-:9. Return account info\nby username;
+:7. Request user info\nby username;
+|Application User\nRepository|
+:8. Query user info\nby username;
+:9. Return user info\nby username;
 |Authentication\nService|
-:10. Check username\nand password;
+:10. Check username\nand hashed password;
 if () then (username not exist\nor wrong password)
     :11.1. Return error;
     |Authentication\nController|

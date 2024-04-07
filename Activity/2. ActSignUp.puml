@@ -7,7 +7,8 @@ scale 3
 |User\nInterface|
 |Authorization\nController|
 |Authorization\nService|
-|Account\nRepository|
+|Application User\nRepository|
+|Cart\nRepository|
 |User\nInterface|
 start
 :1. Display sign up page;
@@ -15,16 +16,16 @@ start
 repeat :2. Enter infomation;
 :3. Click "Sign up" button;
 |User\nInterface|
-:4. Check infomation format;
-backward :5.1. Display error;
-repeat while (Information\nis valid?) is(no) not(yes)
-:5.2. Send sign up request\nand information;
+:4. Send sign up request\nand information;
 |Authorization\nController|
-:6. Send sign up request\nand information;
+:5. Send sign up request\nand information;
 |Authorization\nService|
-:7. Hash password;
+:6. Check infomation format;
+backward :7.1. Display error;
+repeat while (Information\nis valid?) is(no) not(yes)
+:7.2. Hash password;
 :8. Request account infomation\nby username;
-|Account\nRepository|
+|Application User\nRepository|
 :8. Query account info\nby username;
 :9. Return account info\nby username;
 |Authorization\nService|
@@ -36,16 +37,20 @@ if () then (username already exist)
     |User\nInterface|
     :13.1. Display error;
     stop
-else(correct password)
+else(infomation is valid)
     |Authorization\nService|
-    :11.2. Request save\nuser infomation;
-    |Account\nRepository|
-    :12.2. Save user infomation;
+    :11.2. Request create user\nwith information;
+    |Application User\nRepository|
+    :12.2. Create user\nwith information;
     |Authorization\nService|
-    :13.2. Return the access\nto the system;
+    :13.2. Request create cart;
+    |Cart\nRepository|
+    :14. Create cart;
+    |Authorization\nService|
+    :15. Return the access\nto the system;
     |Authorization\nController|
-    :12.2. Return the access\nto the system;
+    :16. Return the access\nto the system;
     |User\nInterface|
-    :13.1. Display home page\nwith signed in;
+    :17. Display home page\nwith signed in;
     stop
 @enduml
