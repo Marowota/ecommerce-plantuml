@@ -1,0 +1,56 @@
+@startuml ActSignUp
+
+skin rose
+scale 3
+
+|Customer|
+|User\nInterface|
+|Authorization\nController|
+|Authorization\nService|
+|Application User\nRepository|
+|Cart\nRepository|
+|User\nInterface|
+start
+:1. Display sign up page;
+|Customer|
+repeat :2. Enter infomation;
+:3. Click "Sign up" button;
+|User\nInterface|
+:4. Send sign up request\nand information;
+|Authorization\nController|
+:5. Send sign up request\nand information;
+|Authorization\nService|
+:6. Check infomation format;
+backward :7.1. Display error;
+repeat while (Information\nis valid?) is(no) not(yes)
+:7.2. Hash password;
+:8. Request account infomation\nby username;
+|Application User\nRepository|
+:8. Query account info\nby username;
+:9. Return account info\nby username;
+|Authorization\nService|
+:10. Check username;
+if () then (username already exist)
+    :11.1. Return error;
+    |Authorization\nController|
+    :12.1. Return error;
+    |User\nInterface|
+    :13.1. Display error;
+    stop
+else(infomation is valid)
+    |Authorization\nService|
+    :11.2. Request create user\nwith information;
+    |Application User\nRepository|
+    :12.2. Create user\nwith information;
+    |Authorization\nService|
+    :13.2. Request create cart;
+    |Cart\nRepository|
+    :14. Create cart;
+    |Authorization\nService|
+    :15. Return the access\nto the system;
+    |Authorization\nController|
+    :16. Return the access\nto the system;
+    |User\nInterface|
+    :17. Display home page\nwith signed in;
+    stop
+@enduml
