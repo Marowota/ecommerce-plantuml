@@ -8,7 +8,7 @@ actor Admin as admin
 actor Customer as customer
 actor Staff as staff
 
-rectangle "Harbe System" {
+rectangle "Harbe Ecomerce" {
     usecase (Manage product) as qlsp
     usecase (Manage cart) as qlgh
     usecase (Manage category) as qldmsp
@@ -18,7 +18,6 @@ rectangle "Harbe System" {
     usecase (Manage notification) as qltb
     usecase (Sign in) as dn
     usecase (Sign up) as dk
-
 }
 
 admin --- qlsp
