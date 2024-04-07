@@ -8,25 +8,25 @@ title "View notification"
 |User|
 |UI|
 start
-    :Show list notification page;
+    :1. Show list notification page;
     |User|
-    :Access notificaiton info;
+    :2. Access notificaiton info;
     |UI|
-    :Send get request for api;
+    :3. Send get request for api;
     |Notification controller|
-    :Resolve the request and send it to service;
+    :4. Resolve the request and send it to service;
     |Notification service|
-    :Asking repository for data;
+    :5. Asking repository for data;
     |Notification repository|
-    :Access database;
-    :Query data by id;
-    :Return object;
+    :6. Access database;
+    :7. Query data by id;
+    :8. Return object;
     |Notification service|
-    :Return object;
+    :9. Return object;
     |Notification controller|
-    :Return request result, include body;
+    :10. Return request result, include body;
     |UI|
-    :Manipulate request and show;
+    :11. Manipulate request and show;
 stop
 
 

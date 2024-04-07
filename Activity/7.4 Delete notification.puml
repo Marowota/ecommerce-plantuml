@@ -8,29 +8,29 @@ title "Delete notification"
 |Admin|
 |UI|
 start
-    :Show notification list;
+    :1. Show notification list;
     |Admin|
-    :Choose list notification;
+    :2. Choose list notification;
     |UI|
-    :Show choosed option;
+    :3. Show choosed option;
     |Admin|
-    :Submit list notification to delete;
+    :4. Submit list notification to delete;
     |UI|
-    :Send delete request api;
+    :5. Send delete request api;
     |Notification controller|
-    :Resolve the request and send it to service;
+    :6. Resolve the request and send it to service;
     |Notification service|
-    :Push list notification need to delete;
+    :7. Push list notification need to delete;
     |Notification repository|
-    :Access database;
-    :Query delete;
-    :Return result;
+    :8. Access database;
+    :9. Query delete;
+    :10. Return result;
     |Notification service|
-    :Return result;
+    :11. Return result;
     |Notification controller|
-    :Return request result;
+    :12. Return request result;
     |UI|
-    :Show delete result;
+    :13. Show delete result;
 stop
 
 

@@ -8,25 +8,25 @@ title "View notification"
 |Admin|
 |UI|
 start
-    :Show home page;
+    :1. Show home page;
     |Admin|
-    :Access notificaiton page;
+    :2. Access notificaiton page;
     |UI|
-    :Send get request for api;
+    :3. Send get request for api;
     |Notification controller|
-    :Resolve the request and send it to service;
+    :4. Resolve the request and send it to service;
     |Notification service|
-    :Asking repository for data;
+    :5. Asking repository for data;
     |Notification repository|
-    :Access database;
-    :Query select all data;
-    :Return object list;
+    :6. Access database;
+    :7. Query select all data;
+    :8. Return object list;
     |Notification service|
-    :Return object list;
+    :9. Return object list;
     |Notification controller|
-    :Return request result, include body;
+    :10. Return request result, include body;
     |UI|
-    :Manipulate request and show;
+    :11. Manipulate request and show;
 stop
 
 

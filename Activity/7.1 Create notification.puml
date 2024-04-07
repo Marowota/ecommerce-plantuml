@@ -2,31 +2,30 @@
 skin rose
 !pragma useVerticalIf on
 scale 3
-
 title "Create notification"
 
 |Admin|
 |UI|
 start
-    :Show create notification form;
+    :1. Show create notification form;
     |Admin|
-    :Submit new notification;
+    :2. Submit new notification;
     |UI|
-    :Send post request api;
+    :3. Send post request api;
     |Notification controller|
-    :Resolve the request and send it to service;
+    :4. Resolve the request and send it to service;
     |Notification service|
-    :Validate and push new data to repository;
+    :5. Validate and push new data to repository;
     |Notification repository|
-    :Access database;
-    :Query insert;
-    :Return result;
+    :6. Access database;
+    :7. Query insert;
+    :8. Return result;
     |Notification service|
-    :Return result;
+    :9.Return result;
     |Notification controller|
-    :Return request result;
+    :10. Return request result;
     |UI|
-    :Show create result;
+    :11. Show create result;
 stop
 
 

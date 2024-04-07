@@ -8,25 +8,25 @@ title "Update notification"
 |Admin|
 |UI|
 start
-    :Show edit notification form;
+    :1. Show edit notification form;
     |Admin|
-    :Submit updated edit form;
+    :2. Submit updated edit form;
     |UI|
-    :Send update request api;
+    :3. Send update request api;
     |Notification controller|
-    :Resolve the request and send it to service;
+    :4. Resolve the request and send it to service;
     |Notification service|
-    :Validate and push update data to repository;
+    :5. Validate and push update data to repository;
     |Notification repository|
-    :Access database;
-    :Query update;
-    :Return result;
+    :6. Access database;
+    :7. Query update;
+    :8. Return result;
     |Notification service|
-    :Return result;
+    :9. Return result;
     |Notification controller|
-    :Return request result;
+    :10. Return request result;
     |UI|
-    :Show update result;
+    :11. Show update result;
 stop
 
 
