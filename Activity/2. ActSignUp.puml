@@ -1,0 +1,23 @@
+@startuml ActSignIn
+
+skin rose
+scale 3
+
+|Customer|
+|User\nInterface|
+|Authorization\nController|
+|Authorization\nService|
+|Account\nRepository|
+|User\nInterface|
+start
+:1. Display sign up page;
+|Customer|
+repeat :2. Enter infomation;
+:3. Click "Sign up" button;
+|User\nInterface|
+:4. Check infomation format;
+backward :5.1. Display error;
+repeat while (Information\nis valid?) is(no) not(yes)
+:5.2. Send sign up request\nand send information;
+
+@enduml
