@@ -1,0 +1,45 @@
+@startuml ActSignIn
+
+skin rose
+scale 3
+
+|Actor|
+|User\nInterface|
+|Authentication\nController|
+|Authentication\nService|
+|Account\nRepository|
+|User\nInterface|
+start
+:1. Display sign in page;
+|Actor|
+:2. Enter username,\npassword in the text box;
+:3. Click "Sign in" button;
+|User\nInterface|
+:4. Send username, password;
+|Authentication\nController|
+:5. Send username, password;
+|Authentication\nService|
+:6. Hash password;
+:7. Request account info\nby username;
+|Account\nRepository|
+:8. Query account info\nby username;
+:9. Return account info\nby username;
+|Authentication\nService|
+:10. Check hashed password;
+if () then (user not exist\nor wrong password)
+:11.1. Return error;
+|Authentication\nController|
+:12.1. Return error;
+|User\nInterface|
+:13.1. Display error;
+stop
+
+else(correct password)
+|Authentication\nService|
+:11.2. Return the access\nto the system;
+|Authentication\nController|
+:12.2. Return the access\nto the system;
+|User\nInterface|
+:13.1. Display home page\nwith signed in;
+stop
+@enduml
