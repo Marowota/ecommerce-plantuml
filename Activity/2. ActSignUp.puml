@@ -1,4 +1,4 @@
-@startuml ActSignIn
+@startuml ActSignUp
 
 skin rose
 scale 3
@@ -18,6 +18,34 @@ repeat :2. Enter infomation;
 :4. Check infomation format;
 backward :5.1. Display error;
 repeat while (Information\nis valid?) is(no) not(yes)
-:5.2. Send sign up request\nand send information;
-
+:5.2. Send sign up request\nand information;
+|Authorization\nController|
+:6. Send sign up request\nand information;
+|Authorization\nService|
+:7. Hash password;
+:8. Request account infomation\nby username;
+|Account\nRepository|
+:8. Query account info\nby username;
+:9. Return account info\nby username;
+|Authorization\nService|
+:10. Check username;
+if () then (username already exist)
+    :11.1. Return error;
+    |Authorization\nController|
+    :12.1. Return error;
+    |User\nInterface|
+    :13.1. Display error;
+    stop
+else(correct password)
+    |Authorization\nService|
+    :11.2. Request save\nuser infomation;
+    |Account\nRepository|
+    :12.2. Save user infomation;
+    |Authorization\nService|
+    :13.2. Return the access\nto the system;
+    |Authorization\nController|
+    :12.2. Return the access\nto the system;
+    |User\nInterface|
+    :13.1. Display home page\nwith signed in;
+    stop
 @enduml
