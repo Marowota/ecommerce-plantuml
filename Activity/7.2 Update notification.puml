@@ -1,0 +1,35 @@
+@startuml 7. Update notification
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "Update notification"
+
+|Admin|
+|UI|
+start
+    :Show edit notification form;
+    |Admin|
+    :Submit updated edit form;
+    |UI|
+    :Send update request api;
+    |Notification controller|
+    :Resolve the request and send it to service;
+    |Notification service|
+    :Validate and push update data to repository;
+    |Notification repository|
+    :Access database;
+    :Query update;
+    :Return result;
+    |Notification service|
+    :Return result;
+    |Notification controller|
+    :Return request result;
+    |UI|
+    :Show update result;
+stop
+
+
+
+
+@enduml

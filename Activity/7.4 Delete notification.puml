@@ -1,0 +1,39 @@
+@startuml 7. Delete notification
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "Delete notification"
+
+|Admin|
+|UI|
+start
+    :Show notification list;
+    |Admin|
+    :Choose list notification;
+    |UI|
+    :Show choosed option;
+    |Admin|
+    :Submit list notification to delete;
+    |UI|
+    :Send delete request api;
+    |Notification controller|
+    :Resolve the request and send it to service;
+    |Notification service|
+    :Push list notification need to delete;
+    |Notification repository|
+    :Access database;
+    :Query delete;
+    :Return result;
+    |Notification service|
+    :Return result;
+    |Notification controller|
+    :Return request result;
+    |UI|
+    :Show delete result;
+stop
+
+
+
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml 7. View notification
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "View notification"
+
+|Admin|
+|UI|
+start
+    :Show home page;
+    |Admin|
+    :Access notificaiton page;
+    |UI|
+    :Send get request for api;
+    |Notification controller|
+    :Resolve the request and send it to service;
+    |Notification service|
+    :Asking repository for data;
+    |Notification repository|
+    :Access database;
+    :Query select all data;
+    :Return object list;
+    |Notification service|
+    :Return object list;
+    |Notification controller|
+    :Return request result, include body;
+    |UI|
+    :Manipulate request and show;
+stop
+
+
+
+
+@enduml
