@@ -1,0 +1,39 @@
+@startuml 6.4 Delete voucher
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "Delete voucher"
+
+|Admin|
+|UI|
+start
+    :1. Show voucher list;
+    |Admin|
+    :2. Choose list voucher;
+    |UI|
+    :3. Show choosed option;
+    |Admin|
+    :4. Submit list voucher to delete;
+    |UI|
+    :5. Send delete request api;
+    |Voucher controller|
+    :6. Resolve the request and send it to service;
+    |Voucher service|
+    :7. Push list voucher need to delete;
+    |Voucher repository|
+    :8. Access database;
+    :9. Query delete;
+    :10. Return result;
+    |Voucher service|
+    :11. Return result;
+    |Voucher controller|
+    :12. Return request result;
+    |UI|
+    :13. Show delete result;
+stop
+
+
+
+
+@enduml

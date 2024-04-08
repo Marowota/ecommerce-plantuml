@@ -1,4 +1,4 @@
-@startuml 6. Update voucher
+@startuml 6.2 Update voucher
 skin rose
 !pragma useVerticalIf on
 scale 3

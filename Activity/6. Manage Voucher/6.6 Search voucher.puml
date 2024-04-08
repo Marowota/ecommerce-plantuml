@@ -1,0 +1,35 @@
+@startuml 6.6 Search voucher
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "Search voucher"
+
+|User|
+|UI|
+start
+    :1. Show list voucher page;
+    |User|
+    :2. Type in voucher information \n(name, code);
+    |UI|
+    :3. Send get request to api;
+    |Voucher controller|
+    :4. Resolve the request and send it to service;
+    |Voucher service|
+    :5. Ask repository for voucher data;
+    |Voucher repository|
+    :6. Access database;
+    :7. Query select voucher data \nby name;
+    :8. Return list voucher object;
+    |Voucher service|
+    :9. Return list voucher object;
+    |Voucher controller|
+    :10. Return request result, in body;
+    |UI|
+    :11. Manipulate request \nand show searched result;
+stop
+
+
+
+
+@enduml

@@ -1,9 +1,9 @@
-@startuml 7. View voucher
+@startuml 6.3 View voucher
 skin rose
 !pragma useVerticalIf on
 scale 3
 
-title "View voucher"
+title "View voucher information"
 
 |User|
 |UI|

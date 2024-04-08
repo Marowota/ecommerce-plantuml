@@ -1,9 +1,9 @@
-@startuml 7. View notification list
+@startuml 6.5 View voucher list
 skin rose
 !pragma useVerticalIf on
 scale 3
 
-title "View notification"
+title "View voucher"
 
 |Admin|
 |UI|
@@ -13,17 +13,17 @@ start
     :2. Access notificaiton page;
     |UI|
     :3. Send get request for api;
-    |Notification controller|
+    |Voucher controller|
     :4. Resolve the request and send it to service;
-    |Notification service|
+    |Voucher service|
     :5. Asking repository for data;
-    |Notification repository|
+    |Voucher repository|
     :6. Access database;
     :7. Query select all data;
     :8. Return object list;
-    |Notification service|
+    |Voucher service|
     :9. Return object list;
-    |Notification controller|
+    |Voucher controller|
     :10. Return request result, include body;
     |UI|
     :11. Manipulate request and show;
