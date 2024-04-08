@@ -27,33 +27,36 @@ repeat while (Information\nis valid?) is(no) not(yes)
 :7.2. Hash password;
 :8. Request account infomation\nby username;
 |Application User\nRepository|
-:8. Query account info\nby username;
-:9. Return account info\nby username;
+:8. Access database;
+:9. Query select account info\nby username;
+:10. Return account info\nby username;
 |Authorization\nService|
-:10. Check username;
+:11. Check username;
 if () then (username already exist)
-    :11.1. Return\nerror message;
+    :12.1. Return\nerror message;
     |Authorization\nController|
-    :12.1. Retur\nerror message;
+    :13.1. Retur\nerror message;
     |User\nInterface|
-    :13.1. Display\nerror message;
+    :14.1. Display\nerror message;
     stop
 else(infomation is valid)
     |Authorization\nService|
-    :11.2. Create user\nwith information;
+    :12.2. Create user\nwith information;
     |Application User\nRepository|
-    :12.2. Save user\ninformation;
-    :13.2. Return\nsuccess message;
+    :13.2. Access database;
+    :14.2. Query insert user\nwith infomation;
+    :15. Return\nsuccess message;
     |Authorization\nService|
-    :14. Create cart;
+    :16. Create cart;
     |Cart\nRepository|
-    :15. Save cart\ninformation;
-    :16. Return\nsuccess message;
+    :17. Access database;
+    :18. Query insert cart\nwith infomation;
+    :19. Return\nsuccess message;
     |Authorization\nService|
-    :17. Return\nsuccess message;
+    :20. Return\nsuccess message;
     |Authorization\nController|
-    :18. Return\nsuccess message;
+    :21. Return\nsuccess message;
     |User\nInterface|
-    :19. Display sign in page\nand success message;
+    :22. Display sign in page\nand success message;
     stop
 @enduml
