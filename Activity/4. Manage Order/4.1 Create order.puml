@@ -1,0 +1,61 @@
+@startuml 4.1 Create order
+skin rose
+!pragma useVerticalIf on
+scale 3
+title "Create order"
+
+|User|
+|UI|
+start
+    :1. Display cart;
+    |User|
+    repeat :2. Choose product;
+    |UI|
+    repeat while (Not chose any product) is (yes) not (no)
+    |User|
+    :3. Go to checkout;
+    |UI|
+    :4. Send get request api;
+    |Order controller|
+    :5. Ask for order information;
+    |ApplicationUser service|
+    :7. Get address;
+    |ApplicationUser repository|
+    :8. Access database;
+    :9. Query select;
+    :10. Return result;
+    |ApplicationUser service|
+    :11. Get cart detail;
+    |CartDeatil repository|
+    :13. Access database;
+    :14. Query select;
+    :15. Return result;
+    |ApplicationUser service|
+    :Return cart and address;
+    |Order controller|
+    :16. Return request result;
+    |UI|
+    :17. Show checkout page;
+    |User|
+    :18. Select address;
+    :19. View chooes product;
+    :20. Create order;
+    |UI|
+    :21. Send post request api;
+    |Order controller|
+    :22. Resolve the request and send it to service;
+    |Order service|
+    :23. Push new data to repository;
+    |Order repository|
+    :24. Access database;
+    :25. Query insert;
+    :26. Return result;
+    |Order service|
+    :27.Return result;
+    |Order controller|
+    :28. Return request result;
+    |UI|
+    :29. Show order result;
+stop
+
+@enduml
