@@ -11,9 +11,10 @@ scale 3
 |Cart\nRepository|
 |User\nInterface|
 start
+repeat
 :1. Display sign up page;
 |Customer|
-repeat :2. Enter infomation;
+:2. Enter infomation;
 :3. Click "Sign up" button;
 |User\nInterface|
 :4. Send sign up request\nand information;
@@ -21,7 +22,7 @@ repeat :2. Enter infomation;
 :5. Send sign up request\nand information;
 |Authorization\nService|
 :6. Check infomation format;
-backward :7.1. Display error;
+backward :7.1. Display error message;
 repeat while (Information\nis valid?) is(no) not(yes)
 :7.2. Hash password;
 :8. Request account infomation\nby username;
@@ -31,26 +32,28 @@ repeat while (Information\nis valid?) is(no) not(yes)
 |Authorization\nService|
 :10. Check username;
 if () then (username already exist)
-    :11.1. Return error;
+    :11.1. Return\nerror message;
     |Authorization\nController|
-    :12.1. Return error;
+    :12.1. Retur\nerror message;
     |User\nInterface|
-    :13.1. Display error;
+    :13.1. Display\nerror message;
     stop
 else(infomation is valid)
     |Authorization\nService|
-    :11.2. Request create user\nwith information;
+    :11.2. Create user\nwith information;
     |Application User\nRepository|
-    :12.2. Create user\nwith information;
+    :12.2. Save user\ninformation;
+    :13.2. Return\nsuccess message;
     |Authorization\nService|
-    :13.2. Request create cart;
-    |Cart\nRepository|
     :14. Create cart;
+    |Cart\nRepository|
+    :15. Save cart\ninformation;
+    :16. Return\nsuccess message;
     |Authorization\nService|
-    :15. Return the access\nto the system;
+    :17. Return\nsuccess message;
     |Authorization\nController|
-    :16. Return the access\nto the system;
+    :18. Return\nsuccess message;
     |User\nInterface|
-    :17. Display home page\nwith signed in;
+    :19. Display sign in page\nand success message;
     stop
 @enduml

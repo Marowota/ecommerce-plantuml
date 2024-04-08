@@ -1,0 +1,42 @@
+@startuml ActProductInfo
+
+skin rose
+scale 3
+
+|Admin|
+|User\nInterface|
+|Product\nController|
+|Product\nService|
+|Product\nRepository|
+|User\nInterface|
+start
+:1. Display product detail page;
+|Admin|
+:2. Click "Update" button;
+|User\nInterface|
+repeat :3. Display update\nproduct information form;
+|Admin|
+:4. Enter new\nproduct information;
+:5. Click "Update" button;
+|User\nInterface|
+:6. Request update product\nand send information;
+|Product\nController|
+:7. Request update product\nand send information;
+|Product\nService|
+:8. Check product\ninformation;
+backward :9.1. Display\nerror message;
+repeat while(Infomation\nis valid?) is(no) not(yes)
+:9.2. Update product\nwith information;
+|Product\nRepository|
+:10. Save product\ninformation;
+:11. Return\nsuccess message;
+|Product\nService|
+:12. Return\nsuccess message;
+|Product\nController|
+:13. Return\nsuccess message;
+|User\nInterface|
+:11. Display success message\nand new product detail page;
+stop
+
+
+@enduml
