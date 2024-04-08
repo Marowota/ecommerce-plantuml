@@ -1,0 +1,34 @@
+@startuml ActViewCategoryInfo
+
+skin rose
+scale 3
+
+|Admin|
+|User\nInterface|
+|Category\nController|
+|Category\nService|
+|Category\nRepository|
+|User\nInterface|
+start
+:1. Display category list;
+|Admin|
+:2. Click category\ncard item;
+|User\nInterface|
+:3. Request category info;
+|Category\nController|
+:4. Request category info;
+|Category\nService|
+:5. Get category info;
+|Category\nRepository|
+:6. Access database;
+:7. Query select;
+:8. Return category;
+|Category\nService|
+:9. Return category info;
+|Category\nController|
+:10. Return category info;
+|User\nInterface|
+:11. Display category\ndetail page;
+stop
+
+@enduml

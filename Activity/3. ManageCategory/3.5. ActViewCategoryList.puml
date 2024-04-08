@@ -1,0 +1,34 @@
+@startuml ActViewCategoryList
+
+skin rose
+scale 3
+
+|User|
+|User\nInterface|
+|Category\nController|
+|Category\nService|
+|Category\nRepository|
+|User\nInterface|
+start
+:1. Display home page;
+|User|
+:2. Click\n"Category" tab;
+|User\nInterface|
+:3. Request\ncategory list;
+|Category\nController|
+:4. Request\ncategory list;
+|Category\nService|
+:5. Get\ncategory list;
+|Category\nRepository|
+:6. Access database;
+:7. Query select;
+:8. Return\ncategory list;
+|Category\nService|
+:9. Return\ncategory list;
+|Category\nController|
+:10. Return\ncategory list;
+|User\nInterface|
+:11. Display\ncategory list;
+stop
+
+@enduml

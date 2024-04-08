@@ -1,0 +1,35 @@
+@startuml ActExportCategoryList
+
+skin rose
+scale 3
+
+|Admin|
+|User\nInterface|
+|Category\nController|
+|Category\nService|
+|Category\nRepository|
+|User\nInterface|
+start
+:1. Display\ncategory list;
+|Admin|
+:2. Click\n"Export" button;
+|User\nInterface|
+:3. Request export\ncategory list;
+|Category\nController|
+:4. Request export\ncategory list;
+|Category\nService|
+:5. Get\ncategory list;
+|Category\nRepository|
+:6. Access database;
+:7. Query select;
+:8. Return\nategory list;
+|Category\nService|
+:9. Create\nexcel file;
+:10. Return\nexcel file;
+|Category\nController|
+:11. Return\nexcel file;
+|User\nInterface|
+:12. Display\ndownload dialog;
+stop
+
+@enduml
