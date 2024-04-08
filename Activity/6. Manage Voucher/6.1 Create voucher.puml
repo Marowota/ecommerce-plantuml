@@ -1,0 +1,34 @@
+@startuml 6. Create voucher
+skin rose
+!pragma useVerticalIf on
+scale 3
+title "Create voucher"
+
+|Admin|
+|UI|
+start
+    :1. Show create voucher form;
+    |Admin|
+    :2. Submit new voucher;
+    |UI|
+    :3. Send post request api;
+    |Voucher controller|
+    :4. Resolve the request and send it to service;
+    |Voucher service|
+    :5. Validate and push new data to repository;
+    |Voucher repository|
+    :6. Access database;
+    :7. Query insert;
+    :8. Return result;
+    |Voucher service|
+    :9.Return result;
+    |Voucher controller|
+    :10. Return request result;
+    |UI|
+    :11. Show create result;
+stop
+
+
+
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml 7. View voucher
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "View voucher"
+
+|User|
+|UI|
+start
+    :1. Show list voucher page;
+    |User|
+    :2. Access voucher info;
+    |UI|
+    :3. Send get request for api;
+    |Voucher controller|
+    :4. Resolve the request and send it to service;
+    |Voucher service|
+    :5. Asking repository for data;
+    |Voucher repository|
+    :6. Access database;
+    :7. Query data by id;
+    :8. Return object;
+    |Voucher service|
+    :9. Return object;
+    |Voucher controller|
+    :10. Return request result, include body;
+    |UI|
+    :11. Manipulate request and show;
+stop
+
+
+
+
+@enduml

@@ -151,6 +151,13 @@ class Notification{
     - created_at: datetime
 }
 
+class Voucher{
+    - id: long
+    - title: string
+    - startDate: datetime
+    - expireDate: datetime
+}
+
 Product "1" *-- "1..*" ProductSpecification
 Product "1..* "--* "1" Seller
 Product "1" *-- "1..*" Review

@@ -14,6 +14,9 @@ rectangle "Manage cart" {
     usecase (Update product type) as splhsp
     usecase (Delete product in cart) as xsptrgh
     usecase (Delete all products in the cart) as xttcsptrgh
+    usecase (Delete all products in the cart) as xttcsptrgh
+    usecase (Purchase) as pc
+    usecase (Checkout) as ckout
 }
 
 customer --- tspvgh
@@ -23,5 +26,7 @@ customer --- sslsp
 customer --- splhsp
 customer --- xsptrgh
 customer --- xttcsptrgh
+customer --- pc
+customer --- ckout
 
 @enduml
