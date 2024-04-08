@@ -1,0 +1,35 @@
+@startuml ActViewTotalPrice
+
+skin rose
+scale 3
+
+|Customer|
+|User\nInterface|
+|Cart\nController|
+|Cart\nService|
+|Cart Detail\nRepository|
+|User\nInterface|
+start
+:1. Display cart page;
+|Customer|
+:2. Select product;
+|User\nInterface|
+:3. Request total price;
+|Cart\nController|
+:4. Request total price;
+|Cart\nService|
+:5. Get cart detail;
+|Cart Detail\nRepository|
+:6. Access database;
+:7. Query select;
+:8. Return cart detail;
+|Cart\nService|
+:9. Calculate total price;
+:10. Return total price;
+|Cart\nController|
+:11. Return total price;
+|User\nInterface|
+:12. Display total price;
+stop
+
+@enduml

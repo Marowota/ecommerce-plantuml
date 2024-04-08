@@ -22,7 +22,7 @@ repeat
 :5. Send sign up request\nand information;
 |Authorization\nService|
 :6. Check infomation format;
-backward :7.1. Display error message;
+backward :7.1. Return error message;
 repeat while (Information\nis valid?) is(no) not(yes)
 :7.2. Hash password;
 :8. Request account infomation\nby username;

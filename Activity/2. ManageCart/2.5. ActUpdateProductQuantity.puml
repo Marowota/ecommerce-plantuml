@@ -1,0 +1,34 @@
+@startuml ActUpdateProductQuantity
+
+skin rose
+scale 3
+
+|Customer|
+|User\nInterface|
+|Cart\nController|
+|Cart\nService|
+|Cart Detail\nRepository|
+|User\nInterface|
+start
+:1. Display cart page;
+|Customer|
+:2. Click "+" or "-" button;
+|User\nInterface|
+:3. Request update\nproduct quantity;
+|Cart\nController|
+:4. Request update\nproduct quantity;
+|Cart\nService|
+:5. Update cart detail;
+|Cart Detail\nRepository|
+:6. Access database;
+:7. Query update;
+:8. Return new cart detail;
+|Cart\nService|
+:9. Return new cart detail;
+|Cart\nController|
+:10. Return new cart detail;
+|User\nInterface|
+:11. Display new cart;
+stop
+
+@enduml
