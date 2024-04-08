@@ -1,0 +1,35 @@
+@startuml 5.5 View account list
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "View account list"
+
+|Admin|
+|UI|
+start
+    :1. Show home page;
+    |Admin|
+    :2. Access notificaiton page;
+    |UI|
+    :3. Send get request for api;
+    |Account controller|
+    :4. Resolve the request and send it to service;
+    |Account service|
+    :5. Asking repository for data;
+    |Account repository|
+    :6. Access database;
+    :7. Query select all data;
+    :8. Return object list;
+    |Account service|
+    :9. Return object list;
+    |Account controller|
+    :10. Return request result, include body;
+    |UI|
+    :11. Manipulate request and show;
+stop
+
+
+
+
+@enduml

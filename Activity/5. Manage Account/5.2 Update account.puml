@@ -1,0 +1,45 @@
+@startuml 5.2 Update account
+skin rose
+!pragma useVerticalIf on
+scale 3
+title "Update account"
+
+|Admin|
+|UI|
+start
+    :1. Show update account form;
+    |Admin|
+    repeat :2. Type in information;
+    |UI|
+    repeat while (information not valid) is (yes) not (no)
+    |Admin|
+    :3. Submit updated account \ninformation;
+    |UI|
+    :3. Send update request api;
+    |Account controller|
+    :4. Resolve the request and send it to service;
+    |Account service|
+    :5. Validate and push updated data to repository;
+    if (Role == "User") then (yes) 
+    |Application User repository|
+    :5.1 Access database;
+    :5.2 Query update;
+    :5.3 Return result;
+    else (no)
+    endif
+    |Account repository|
+    :6. Access database;
+    :7. Query update;
+    :8. Return result;
+    |Account service|
+    :9.Return result;
+    |Account controller|
+    :10. Return request result;
+    |UI|
+    :11. Show update result;
+stop
+
+
+
+
+@enduml

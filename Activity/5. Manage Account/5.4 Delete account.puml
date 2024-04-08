@@ -1,0 +1,39 @@
+@startuml 5.4 Delete account
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "Delete account"
+
+|Admin|
+|UI|
+start
+    :1. Show account list;
+    |Admin|
+    :2. Choose list account;
+    |UI|
+    :3. Show choosed option;
+    |Admin|
+    :4. Submit list account to delete;
+    |UI|
+    :5. Send delete request api;
+    |Account controller|
+    :6. Resolve the request and send it to service;
+    |Account service|
+    :7. Push list account need to delete;
+    |Account repository|
+    :8. Access database;
+    :9. Query delete;
+    :10. Return result;
+    |Account service|
+    :11. Return result;
+    |Account controller|
+    :12. Return request result;
+    |UI|
+    :13. Show delete result;
+stop
+
+
+
+
+@enduml

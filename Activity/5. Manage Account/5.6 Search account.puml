@@ -1,0 +1,35 @@
+@startuml 5.6 Search account
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "Search account"
+
+|User|
+|UI|
+start
+    :1. Show list account page;
+    |User|
+    :2. Type in account information \n (id, name);
+    |UI|
+    :3. Send get request to api;
+    |Account controller|
+    :4. Resolve the request and send it to service;
+    |Account service|
+    :5. Ask repository for account data;
+    |Account repository|
+    :6. Access database;
+    :7. Query select account data \nby name;
+    :8. Return list account object;
+    |Account service|
+    :9. Return list account object;
+    |Account controller|
+    :10. Return request result, in body;
+    |UI|
+    :11. Manipulate request \nand show searched result;
+stop
+
+
+
+
+@enduml

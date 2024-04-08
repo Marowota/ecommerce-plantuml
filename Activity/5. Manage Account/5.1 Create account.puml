@@ -1,0 +1,45 @@
+@startuml 5.1 Create account
+skin rose
+!pragma useVerticalIf on
+scale 3
+title "Create account"
+
+|Admin|
+|UI|
+start
+    :1. Show create account form;
+    |Admin|
+    repeat :2. Type in information;
+    |UI|
+    repeat while (information not valid) is (yes) not (no)
+    |Admin|
+    :3. Submit new account \ninformation;
+    |UI|
+    :4. Send post request api;
+    |Account controller|
+    :5. Resolve the request and send it to service;
+    |Account service|
+    :6. Push new data to repository;
+    if (Role == "User") then (yes) 
+    |Application User repository|
+    :6.1 Access database;
+    :6.2 Query insert;
+    :6.3 Return result;
+    else (no)
+    endif
+    |Account repository|
+    :7. Access database;
+    :8. Query insert;
+    :9. Return result;
+    |Account service|
+    :10.Return result;
+    |Account controller|
+    :11. Return request result;
+    |UI|
+    :12. Show create result;
+stop
+
+
+
+
+@enduml
