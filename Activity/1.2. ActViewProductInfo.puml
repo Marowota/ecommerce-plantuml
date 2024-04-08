@@ -1,0 +1,33 @@
+@startuml ActviewProductInfo
+
+skin rose
+scale 3
+
+|User|
+|User\nInterface|
+|Product\nController|
+|Product\nService|
+|Product\nRepository|
+|User\nInterface|
+start
+:1. Display product list page;
+|User|
+:2. Click product card item;
+|User\nInterface|
+:3. Request product\ninformation;
+|Product\nController|
+:4. Request product\ninformation;
+|Product\nService|
+:5. Get product\ninformation;
+|Product\nRepository|
+:6. Query product\ninformation;
+:7. Return product\ninformation;
+|Product\nService|
+:8. Return product\ninformation;
+|Product\nController|
+:9. Return product\ninformation;
+|User\nInterface|
+:10. Display product\ndetail page;
+stop
+
+@enduml

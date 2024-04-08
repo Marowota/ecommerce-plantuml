@@ -3,7 +3,7 @@
 skin rose
 scale 3
 
-|Actor|
+|User|
 |User\nInterface|
 |Authentication\nController|
 |Authentication\nService|
@@ -11,7 +11,7 @@ scale 3
 |User\nInterface|
 start
 :1. Display sign in page;
-|Actor|
+|User|
 :2. Enter username,\npassword in the text box;
 :3. Click "Sign in" button;
 |User\nInterface|
