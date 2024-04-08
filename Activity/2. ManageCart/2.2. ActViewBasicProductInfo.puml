@@ -1,0 +1,35 @@
+@startuml ActViewBasicProductInformation
+
+skin rose
+scale 3
+
+|Customer|
+|User\nInterface|
+|Cart\nController|
+|Cart\nService|
+|Cart Detail\nRepository|
+|User\nInterface|
+start
+:1. Display product detail page;
+|Customer|
+:2. Click "Cart" icon;
+|User\nInterface|
+:3. Request cart information;
+|Cart\nController|
+:4. Request cart information;
+|Cart\nService|
+:5. Get cart detail;
+|Cart Detail\nRepository|
+:6. Access database;
+:7. Query select;
+:8. Return cart detail;
+|Cart\nService|
+:9. Get product\nbasic information;
+:10. Return product\nbasic information;
+|Cart\nController|
+:11. Return product\nbasic information;
+|User\nInterface|
+:12. Display product\nbasic information;
+stop
+
+@enduml

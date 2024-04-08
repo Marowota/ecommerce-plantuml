@@ -1,0 +1,43 @@
+@startuml ActCreateCategory
+
+skin rose
+scale 3
+
+|Admin|
+|User\nInterface|
+|Category\nController|
+|Category\nService|
+|Category\nRepository|
+|User\nInterface|
+start
+:1. Display category list;
+|Admin|
+:2. Click "Create" button;
+|User\nInterface|
+repeat
+:3. Display category\ninformation form;
+|Admin|
+:4. Enter category\ninformation;
+:5. Click "Create" button;
+|User\nInterface|
+:6. Request create\ncategory;
+|Category\nController|
+:7. Request create\ncategory;
+|Category\nService|
+:8. Check category information;
+backward :9.1.Return error message;
+repeat while(Category information\nis valid) is(no) not(yes)
+:9.2. Creat new category;
+|Category\nRepository|
+:10. Access database;
+:11. Query insert;
+:12. Return category;
+|Category\nService|
+:13. Return result message;
+|Category\nController|
+:14. Return result message;
+|User\nInterface|
+:15. Display result message;
+stop
+
+@enduml

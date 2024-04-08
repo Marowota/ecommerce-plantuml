@@ -1,0 +1,35 @@
+@startuml ActUpdateProductType
+
+skin rose
+scale 3
+
+|Customer|
+|User\nInterface|
+|Cart\nController|
+|Cart\nService|
+|Cart Detail\nRepository|
+|User\nInterface|
+start
+:1. Display cart page;
+|Customer|
+:2. Click product type button;
+:3. Select other product type;
+|User\nInterface|
+:4. Request update product type;
+|Cart\nController|
+:5. Request update product type;
+|Cart\nService|
+:6. Update cart detail;
+|Cart Detail\nRepository|
+:7. Access database;
+:8. Query update;
+:9. Return new cart detail;
+|Cart\nService|
+:10. Return new cart detail;
+|Cart\nController|
+:11. Return new cart detail;
+|User\nInterface|
+:12. Display new cart;
+stop
+
+@enduml
