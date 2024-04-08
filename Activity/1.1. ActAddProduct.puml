@@ -29,14 +29,15 @@ backward :9.1. Display\nerror message;
 repeat while(Infomation\nis valid?) is(no) not(yes)
 :9.2. Create product\nwith information;
 |Product\nRepository|
-:10. Save product\ninformation;
-:11. Return\nsuccess message;
-|Product\nService|
+:10. Access database;
+:11. Query insert product\nwith information;
 :12. Return\nsuccess message;
-|Product\nController|
+|Product\nService|
 :13. Return\nsuccess message;
+|Product\nController|
+:14. Return\nsuccess message;
 |User\nInterface|
-:11. Display success message\nand new product list;
+:15. Display success message\nand new product list;
 stop
 
 @enduml

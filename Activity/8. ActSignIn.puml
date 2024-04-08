@@ -22,23 +22,24 @@ start
 :6. Hash password;
 :7. Request user info\nby username;
 |Application User\nRepository|
-:8. Query user info\nby username;
-:9. Return user info\nby username;
+:8. Access database;
+:9. Query select user info\nby username;
+:10. Return user info\nby username;
 |Authentication\nService|
-:10. Check username\nand hashed password;
+:11. Check username\nand hashed password;
 if () then (username not exist\nor wrong password)
-    :11.1. Return error;
-    |Authentication\nController|
     :12.1. Return error;
+    |Authentication\nController|
+    :13.1. Return error;
     |User\nInterface|
-    :13.1. Display error;
+    :14.1. Display error;
     stop
 else(correct password)
     |Authentication\nService|
-    :11.2. Return the access\nto the system;
-    |Authentication\nController|
     :12.2. Return the access\nto the system;
+    |Authentication\nController|
+    :13.2. Return the access\nto the system;
     |User\nInterface|
-    :13.1. Display home page\nwith signed in;
+    :14.1. Display home page\nwith signed in;
     stop
 @enduml

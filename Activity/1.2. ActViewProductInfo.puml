@@ -20,14 +20,15 @@ start
 |Product\nService|
 :5. Get product\ninformation;
 |Product\nRepository|
-:6. Query product\ninformation;
-:7. Return product\ninformation;
-|Product\nService|
+:6. Access database;
+:7. Query select\nproduct information;
 :8. Return product\ninformation;
-|Product\nController|
+|Product\nService|
 :9. Return product\ninformation;
+|Product\nController|
+:10. Return product\ninformation;
 |User\nInterface|
-:10. Display product\ndetail page;
+:11. Display product\ndetail page;
 stop
 
 @enduml
