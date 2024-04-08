@@ -10,7 +10,7 @@ scale 3
 |Product\nRepository|
 |User\nInterface|
 start
-:1. Display product list page;
+:1. Display product list;
 |User|
 :2. Click product card item;
 |User\nInterface|
