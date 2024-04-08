@@ -1,0 +1,35 @@
+@startuml ActViewProductList
+
+skin rose
+scale 3
+
+|User|
+|User\nInterface|
+|Product\nController|
+|Product\nService|
+|Product\nRepository|
+|User\nInterface|
+start
+:1. Display home page;
+|User|
+:2. Enter keyword\nin the search box;
+:3. Click "Search"\nor press "Enter";
+|User\nInterface|
+:4. Request product list\nand send keyword;
+|Product\nController|
+:5. Request product list\nand send keyword;
+|Product\nService|
+:6. Get product\nby keyword;
+|Product\nRepository|
+:7. Access database;
+:8. Query select product\nby keyword;
+:9. Return product list;
+|Product\nService|
+:10. Return product list;
+|Product\nController|
+:11. Return product list;
+|User\nInterface|
+:12. Display product\nwhich match keyword;
+stop
+
+@enduml

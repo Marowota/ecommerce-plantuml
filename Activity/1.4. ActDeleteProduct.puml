@@ -1,0 +1,36 @@
+@startuml ActDeleteProduct
+
+skin rose
+scale 3
+
+|Admin|
+|User\nInterface|
+|Product\nController|
+|Product\nService|
+|Product\nRepository|
+|User\nInterface|
+start
+repeat
+:1. Display product list;
+|Admin|
+:2. Select product to delete;
+:3. Click "Delete" button;
+|User\nInterface|
+:4. Request delete product;
+|Product\nController|
+:5. Request delete product;
+|Product\nService|
+:6. Delete product;
+|Product\nRepository|
+:7 Access database;
+:8. Query delete product;
+:9. Return success message;
+|Product\nService|
+:10. Return success message;
+|Product\nController|
+:11. Return success message;
+|User\nInterface|
+:12. Display success message\nand new product list;
+stop
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml ActViewProducStatistic
+
+skin rose
+scale 3
+
+|Admin|
+|User\nInterface|
+|Product Statistic\nController|
+|Product Statistic\nService|
+|Product\nRepository|
+|User\nInterface|
+start
+:1. Display product list;
+|Admin|
+:2. Click "Show statistic" button;
+|User\nInterface|
+:3. Request statistic metrics;
+|Product Statistic\nController|
+:4. Request statistic metrics;
+|Product Statistic\nService|
+:5. Get all product info;
+|Product\nRepository|
+:6. Access database;
+:7. Query all product;
+:8. Return product list;
+|Product Statistic\nService|
+:9. Calculate statistic metrics;
+:10. Return statistic metrics;
+|Product Statistic\nController|
+:11. Return statistic metrics;
+|User\nInterface|
+:12. Display statistic metrics;
+stop
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml ActFilterProduct
+
+skin rose
+scale 3
+
+|User|
+|User\nInterface|
+|Product\nController|
+|Product\nService|
+|Product\nRepository|
+|User\nInterface|
+
+@enduml

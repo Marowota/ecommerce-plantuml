@@ -1,4 +1,4 @@
-@startuml ActProductInfo
+@startuml ActUpdateProductInfo
 
 skin rose
 scale 3
@@ -14,7 +14,8 @@ start
 |Admin|
 :2. Click "Update" button;
 |User\nInterface|
-repeat :3. Display update\nproduct information form;
+repeat
+:3. Display update\nproduct information form;
 |Admin|
 :4. Enter new\nproduct information;
 :5. Click "Update" button;
@@ -38,6 +39,5 @@ repeat while(Infomation\nis valid?) is(no) not(yes)
 |User\nInterface|
 :15. Display success message\nand new product detail page;
 stop
-
 
 @enduml
