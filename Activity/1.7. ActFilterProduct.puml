@@ -9,5 +9,26 @@ scale 3
 |Product\nService|
 |Product\nRepository|
 |User\nInterface|
+start
+:1. Display search page;
+|User|
+:2. Choose filter option;
+|User\nInterface|
+:3. Request filter product\nand send filter option;
+|Product\nController|
+:4. Request filter product\nand send filter option;
+|Product\nService|
+:5. Get product\nby filter option;
+|Product\nRepository|
+:6. Access database;
+:7. Query select product\nby filter option;
+:8. Return product list;
+|Product\nService|
+:9. Return product list;
+|Product\nController|
+:10. Return product list;
+|User\nInterface|
+:11. Display product list;
+stop
 
 @enduml

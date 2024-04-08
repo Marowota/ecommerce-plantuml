@@ -1,0 +1,35 @@
+@startuml ActExportProductList
+
+skin rose
+scale 3
+
+|Admin|
+|User\nInterface|
+|Product\nController|
+|Product\nService|
+|Product\nRepository|
+|User\nInterface|
+start
+:1. Display product list;
+|Admin|
+:2. Click "Export" button;
+|User\nInterface|
+:3. Request export product list;
+|Product\nController|
+:4. Request export product list;
+|Product\nService|
+:5. Get product list;
+|Product\nRepository|
+:6. Access database;
+:7. Query select\nproduct list;
+:8. Return product list;
+|Product\nService|
+:9. Create excel file;
+:10. Return excel file;
+|Product\nController|
+:11. Return excel file;
+|User\nInterface|
+:12. Display download dialog;
+stop
+
+@enduml
