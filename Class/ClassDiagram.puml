@@ -17,21 +17,16 @@ class Product{
     - price: double
     - discount_rate: double
     - thumbnail_url: string
-    - images: List<string>
+    - images: Set<string>
     - review_count: int
     - rating_average: double
     - quantity_sold: int
-    - highlight: List<HighlightItem>
+    - highlight: Set<HighlightItem>
     - seller: Seller
-    - supplier: Supplier
-    - categories: List<Category>
-    - product_specifications: List<ProductSpecification>
+    - category: Category
+    - product_specifications: Set<ProductSpecification>
 }
 
-class Supplier{
-    - id: long
-    - name: string
-}
 
 class ProductSpecification{
     - id: long
@@ -43,19 +38,10 @@ class ProductSpecification{
 class ProductOption{
     - id: long
     - name: string
+    - value: string
     - product: Product
 }
 
-class ProductCategory{
-    - id: long
-    - product: Product
-    - category: Category
-}
-
-class ProductHighlight{
-    - id: long
-    - description: string
-}
 
 class Seller{
     - id: long
@@ -72,6 +58,7 @@ class Category{
     - thumbnail_url: string
     - parent_id: long
     - is_primary: boolean
+    - products: Set<Product>
 }
 
 ' Review
@@ -88,9 +75,9 @@ class Review{
 class ApplicationUser{
     
     - cart: Cart
-    - addresses: List<Address>
-    - reviews: List<Review>
-    - orders: List<Order>
+    - addresses: Set<Address>
+    - reviews: Set<Review>
+    - orders: Set<Order>
 }
 
 
@@ -165,15 +152,11 @@ class Notification{
 }
 
 Product "1" *-- "1..*" ProductSpecification
-Product "1" *-- "1..*" ProductOption
 Product "1..* "--* "1" Seller
-Product "1" o-- "1..*" Supplier
 Product "1" *-- "1..*" Review
 Product "1..*" --o "1" Order
-Product "1" *-- "1..*" ProductHighlight
-
-ProductCategory "1" -- "1..*" Product
-ProductCategory "1" -- "1..*" Category
+Product "1" *-- "1..*" ProductOption
+Product "1..*" --o "1" Category
 
 ApplicationUser "1" *-- "1..*" Address
 ApplicationUser "1" *-- "1..*" Review
