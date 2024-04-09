@@ -11,26 +11,20 @@ actor Staff as staff
 rectangle "Manage category" {
     usecase (Create category) as tdm
     usecase (View category list) as xdsdm
-    usecase (View category info) as xttdm
-    usecase (Export category list) as xudsdm
-    usecase (Delete category) as xodm
     usecase (Update category) as sttdm
-    usecase (View category statistics) as xtk
+    usecase (Delete category) as xodm
 }
 
 admin --- tdm   
-admin --- xttdm
-admin --- xudsdm
 admin --- xodm
 admin --- sttdm
-admin --- xtk
 
-customer --- xttdm
+customer --- xdsdm
 
-staff --- xttdm
+staff --- xdsdm
 
 tdm <.. xdsdm : <<include>>
-xttdm <.. xdsdm : <<include>>
-xudsdm <.. xdsdm : <<include>>
+sttdm <.. xdsdm : <<include>>
+xodm <.. xdsdm : <<include>>
 
 @enduml
