@@ -1,4 +1,4 @@
-@startuml 7. Create notification
+@startuml ActCreate notification
 skin rose
 !pragma useVerticalIf on
 scale 3

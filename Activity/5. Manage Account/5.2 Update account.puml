@@ -1,4 +1,4 @@
-@startuml 5.2 Update account
+@startuml ActUpdate account
 skin rose
 !pragma useVerticalIf on
 scale 3

@@ -1,4 +1,4 @@
-@startuml 5.5 View account list
+@startuml ActView account list
 skin rose
 !pragma useVerticalIf on
 scale 3

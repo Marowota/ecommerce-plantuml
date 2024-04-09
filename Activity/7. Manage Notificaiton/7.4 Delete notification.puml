@@ -1,4 +1,4 @@
-@startuml 7. Delete notification
+@startuml ActDelete notification
 skin rose
 !pragma useVerticalIf on
 scale 3

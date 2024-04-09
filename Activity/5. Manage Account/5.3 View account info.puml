@@ -1,4 +1,4 @@
-@startuml 5.3 View account
+@startuml ActView account
 skin rose
 !pragma useVerticalIf on
 scale 3

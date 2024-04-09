@@ -1,4 +1,4 @@
-@startuml 4.1 Create order
+@startuml ActCreate order
 skin rose
 !pragma useVerticalIf on
 scale 3

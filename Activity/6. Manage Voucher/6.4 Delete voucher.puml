@@ -1,4 +1,4 @@
-@startuml 6.4 Delete voucher
+@startuml ActDelete voucher
 skin rose
 !pragma useVerticalIf on
 scale 3

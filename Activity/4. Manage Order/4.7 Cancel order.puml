@@ -1,4 +1,4 @@
-@startuml 4.7 Cancel order
+@startuml ActCancel order
 skin rose
 !pragma useVerticalIf on
 scale 3

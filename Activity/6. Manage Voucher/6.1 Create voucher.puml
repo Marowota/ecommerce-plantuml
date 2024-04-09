@@ -1,4 +1,4 @@
-@startuml 6.1 Create voucher
+@startuml ActCreate voucher
 skin rose
 !pragma useVerticalIf on
 scale 3

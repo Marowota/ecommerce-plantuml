@@ -1,4 +1,4 @@
-@startuml 5.1 Create account
+@startuml ActCreate account
 skin rose
 !pragma useVerticalIf on
 scale 3

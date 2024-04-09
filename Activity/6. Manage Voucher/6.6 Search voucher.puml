@@ -1,4 +1,4 @@
-@startuml 6.6 Search voucher
+@startuml ActSearch voucher
 skin rose
 !pragma useVerticalIf on
 scale 3

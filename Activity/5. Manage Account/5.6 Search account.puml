@@ -1,4 +1,4 @@
-@startuml 5.6 Search account
+@startuml ActSearch account
 skin rose
 !pragma useVerticalIf on
 scale 3

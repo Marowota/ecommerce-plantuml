@@ -1,4 +1,4 @@
-@startuml 6.3 View voucher
+@startuml ActView voucher
 skin rose
 !pragma useVerticalIf on
 scale 3

@@ -1,4 +1,4 @@
-@startuml 5.7 View account statistic
+@startuml ActView account statistic
 skin rose
 !pragma useVerticalIf on
 scale 3

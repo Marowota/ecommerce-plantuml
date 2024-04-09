@@ -1,4 +1,4 @@
-@startuml 5.4 Delete account
+@startuml ActDelete account
 skin rose
 !pragma useVerticalIf on
 scale 3

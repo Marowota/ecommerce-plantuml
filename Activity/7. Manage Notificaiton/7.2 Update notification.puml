@@ -1,4 +1,4 @@
-@startuml 7. Update notification
+@startuml ActUpdate notification
 skin rose
 !pragma useVerticalIf on
 scale 3
