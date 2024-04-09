@@ -1,4 +1,4 @@
-@startuml ActUpdateProductInfo
+@startuml ActAddProduct
 
 skin rose
 scale 3
@@ -10,34 +10,34 @@ scale 3
 |Product\nRepository|
 |User\nInterface|
 start
-:1. Display product detail page;
+:1. Display product list;
 |Admin|
-:2. Click "Update" button;
+:2. Click "Add product" button;
 |User\nInterface|
 repeat
-:3. Display update\nproduct information form;
+:3. Display product\ninformation form;
 |Admin|
-:4. Enter new\nproduct information;
-:5. Click "Update" button;
+:4. Enter product information;
+:5. Click "Add product" button;
 |User\nInterface|
-:6. Request update product\nand send information;
+:6. Request create product\nand send information;
 |Product\nController|
-:7. Request update product\nand send information;
+:7. Request create product\nand send information;
 |Product\nService|
 :8. Check product\ninformation;
-backward :9.1. Display\nerror message;
+backward :9.1. Return\nerror message;
 repeat while(Infomation\nis valid?) is(no) not(yes)
-:9.2. Update product\nwith information;
+:9.2. Create product\nwith information;
 |Product\nRepository|
 :10. Access database;
-:11. Query update product\nwith information;
+:11. Query insert product\nwith information;
 :12. Return\nsuccess message;
 |Product\nService|
 :13. Return\nsuccess message;
 |Product\nController|
 :14. Return\nsuccess message;
 |User\nInterface|
-:15. Display success message\nand new product detail page;
+:15. Display success message\nand new product list;
 stop
 
 @enduml

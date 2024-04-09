@@ -1,0 +1,35 @@
+@startuml ActDeleteProductInCart
+
+skin rose
+scale 3
+
+|Customer|
+|User\nInterface|
+|Cart\nController|
+|Cart\nService|
+|Cart Detail\nRepository|
+|User\nInterface|
+start
+:1. Display cart page;
+|Customer|
+:2. Select product;
+:3. Click "Delete" button;
+|User\nInterface|
+:4. Request delete product;
+|Cart\nController|
+:5. Request delete product;
+|Cart\nService|
+:6. Delete cart detail;
+|Cart Detail\nRepository|
+:7. Access database;
+:8. Query delete;
+:9. Return result message;
+|Cart\nService|
+:10. Return result message;
+|Cart\nController|
+:11. Return result message;
+|User\nInterface|
+:12. Display result message;
+stop
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml ActAddProductToCart
+
+skin rose
+scale 3
+
+|Customer|
+|User\nInterface|
+|Cart\nController|
+|Cart\nService|
+|Cart Detail\nRepository|
+|User\nInterface|
+start
+:1. Display product detail page;
+|Customer|
+:2. Click "Add to cart" button;
+|User\nInterface|
+:3. Request add product\nand send product information;
+|Cart\nController|
+:4. Request add product\nand send product information;
+|Cart\nService|
+:5. Create cart detail\nwith product information;
+|Cart Detail\nRepository|
+:6. Access database;
+:7. Query insert;
+:8. Return cart detail;
+|Cart\nService|
+:9. Update cart;
+:10. Return result message;
+|Cart\nController|
+:11. Return result message;
+|User\nInterface|
+:12. Display result message;
+stop
+
+@enduml
