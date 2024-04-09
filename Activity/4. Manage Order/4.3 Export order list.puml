@@ -1,35 +1,33 @@
-@startuml 5.5 View account list
+@startuml 4.3 Export order list
 skin rose
 !pragma useVerticalIf on
 scale 3
 
-title "View account list"
+title "View order list"
 
 |Admin|
 |UI|
 start
     :1. Show home page;
     |Admin|
-    :2. Access account page;
+    :2. Access order page;
     |UI|
     :3. Send get request for api;
-    |Account controller|
+    |Order controller|
     :4. Resolve the request and send it to service;
-    |Account service|
+    |Order service|
     :5. Asking repository for data;
-    |Account repository|
+    |Order repository|
     :6. Access database;
     :7. Query select all data;
     :8. Return object list;
-    |Account service|
+    |Order service|
     :9. Return object list;
-    |Account controller|
+    |Order controller|
     :10. Return request result, include body;
     |UI|
-    :11. Manipulate request and show;
+    :11. Manipulate request and download;
 stop
-
-
 
 
 @enduml

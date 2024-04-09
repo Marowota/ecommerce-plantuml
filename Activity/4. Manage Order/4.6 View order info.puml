@@ -1,0 +1,35 @@
+@startuml 4.6 View order
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "View order information"
+
+|User|
+|UI|
+start
+    :1. Show list order page;
+    |User|
+    :2. Access order info;
+    |UI|
+    :3. Send get request for api;
+    |Order controller|
+    :4. Resolve the request and send it to service;
+    |Order service|
+    :5. Asking repository for data;
+    |Order repository|
+    :6. Access database;
+    :7. Query data by id;
+    :8. Return object;
+    |Order service|
+    :9. Return object;
+    |Order controller|
+    :10. Return request result, include body;
+    |UI|
+    :11. Manipulate request and show;
+stop
+
+
+
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml 4.7 Cancel order
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "Cancel order"
+
+|Admin|
+|UI|
+start
+    :1. Show edit order form;
+    |Admin|
+    :2. Click cancel order;
+    |UI|
+    :3. Send update request api \n(order status: canceled);
+    |Order controller|
+    :4. Resolve the request and send it to service;
+    |Order service|
+    :5. Validate and push update data to repository;
+    |Order repository|
+    :6. Access database;
+    :7. Query update;
+    :8. Return result;
+    |Order service|
+    :9. Return result;
+    |Order controller|
+    :10. Return request result;
+    |UI|
+    :11. Show update result;
+stop
+
+
+
+
+@enduml

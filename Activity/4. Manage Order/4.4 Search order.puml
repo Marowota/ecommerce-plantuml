@@ -1,0 +1,35 @@
+@startuml 4.4 Search order
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "Search order"
+
+|User|
+|UI|
+start
+    :1. Show list order page;
+    |User|
+    :2. Type in order information \n (id, name);
+    |UI|
+    :3. Send get request to api;
+    |Order controller|
+    :4. Resolve the request and send it to service;
+    |Order service|
+    :5. Ask repository for order data;
+    |Order repository|
+    :6. Access database;
+    :7. Query select order data \nby name;
+    :8. Return list order object;
+    |Order service|
+    :9. Return list order object;
+    |Order controller|
+    :10. Return request result, in body;
+    |UI|
+    :11. Manipulate request \nand show searched result;
+stop
+
+
+
+
+@enduml

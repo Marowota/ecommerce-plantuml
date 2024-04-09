@@ -11,7 +11,7 @@ actor Staff as staff
 rectangle "Manage order" {
     usecase (View order info) as xttdh
     usecase (View order list) as xdsdh
-    usecase (View voucher list) as xdsv
+    ' usecase (View voucher list) as xdsv
     usecase (Export order list) as xudsdh
     usecase (Create order) as tdh
     usecase (Cancel order) as hdh
@@ -20,7 +20,7 @@ rectangle "Manage order" {
 }
 
 admin --- xttdh
-admin --- xdsv
+' admin --- xdsv
 admin --- xudsdh    
 admin --- tdh
 admin --- hdh
@@ -28,14 +28,14 @@ admin --- tkdh
 admin --- xtkdh
 
 xttdh --- customer
-xdsv --- customer
+' xdsv --- customer
 tdh --- customer
 hdh --- customer
 tkdh --- customer
 
 staff --- tdh
 staff --- xttdh
-staff --- xdsv
+' staff --- xdsv
 staff --- hdh
 
 xudsdh <.. xdsdh : <<include>>

@@ -1,0 +1,36 @@
+@startuml 5.7 View order statistic
+skin rose
+!pragma useVerticalIf on
+scale 3
+
+title "View order statistic"
+
+|Admin|
+|UI|
+start
+    :1. Show home page;
+    |Admin|
+    :2. Access statistic page;
+    |UI|
+    :3. Send get request for api;
+    |Order controller|
+    :4. Resolve the request and send it to service;
+    |Order service|
+    :5. Asking repository for List Order data;
+    |Order repository|
+    :6. Access database;
+    :7. Query data by id;
+    :8. Return object;
+    |Order service|
+    :9. Caculate the information \n(number of order in month, \n total income, etc..);
+    :10. Return information;
+    |Order controller|
+    :11. Return request result, include body;
+    |UI|
+    :12. Manipulate request and show;
+stop
+
+
+
+
+@enduml
