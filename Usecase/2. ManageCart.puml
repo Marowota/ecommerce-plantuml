@@ -11,7 +11,6 @@ rectangle "Manage cart" {
     usecase (View total price) as xtgt
     usecase (View basic product info) as xttcbcsp
     usecase (Update product quantity) as sslsp
-    usecase (Update product type) as splhsp
     usecase (Delete product in cart) as xsptrgh
     usecase (Delete all products in the cart) as xttcsptrgh
     usecase (Purchase) as pc
@@ -22,7 +21,6 @@ customer --- tspvgh
 customer --- xtgt
 customer --- xttcbcsp
 customer --- sslsp
-customer --- splhsp
 customer --- xsptrgh
 customer --- xttcsptrgh
 customer --- pc
