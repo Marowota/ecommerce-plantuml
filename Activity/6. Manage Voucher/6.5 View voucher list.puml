@@ -10,7 +10,7 @@ title "View voucher"
 start
     :1. Show home page;
     |Admin|
-    :2. Access notificaiton page;
+    :2. Access voucher page;
     |UI|
     :3. Send get request for api;
     |Voucher controller|
