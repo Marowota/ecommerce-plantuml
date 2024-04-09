@@ -10,34 +10,34 @@ scale 3
 |Category\nRepository|
 |User\nInterface|
 start
-:1. Display category list;
+:1. Display category\ndetail page;
 |Admin|
-:2. Click "Create" button;
+:2. Click "Update" button;
 |User\nInterface|
 repeat
 :3. Display category\ninformation form;
 |Admin|
 :4. Enter category\ninformation;
-:5. Click "Create" button;
+:5. Click "Update" button;
 |User\nInterface|
-:6. Request create\ncategory;
+:6. Request update\ncategory;
 |Category\nController|
-:7. Request create\ncategory;
+:7. Request update\ncategory;
 |Category\nService|
-:8. Check category information;
+:8. Check category\ninformation;
 backward :9.1.Return\nerror message;
 repeat while(Category information\nis valid) is(no) not(yes)
-:9.2. Creat new category;
+:9.2. Update category;
 |Category\nRepository|
 :10. Access database;
 :11. Query insert;
 :12. Return category;
 |Category\nService|
-:13. Return\nresult message;
+:13. Return result message;
 |Category\nController|
-:14. Return\nresult message;
+:14. Return result message;
 |User\nInterface|
-:15. Display\nresult message;
+:15. Display result message;
 stop
 
 @enduml

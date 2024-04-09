@@ -1,0 +1,35 @@
+@startuml ActDeleteCategory
+
+skin rose
+scale 3
+
+|Admin|
+|User\nInterface|
+|Category\nController|
+|Category\nService|
+|Category\nRepository|
+|User\nInterface|
+start
+:1. Display\ncategory list;
+|Admin|
+:2. Select category\nto delete;
+:3. Click "Delete" button;
+|User\nInterface|
+:4. Request\ndelete category;
+|Category\nController|
+:5. Request\ndelete category;
+|Category\nService|
+:6. Delete category;
+|Category\nRepository|
+:7 Access database;
+:8. Query delete;
+:9. Return\nresult message;
+|Category\nService|
+:10. Return\nresult message;
+|Category\nController|
+:11. Return\nresult message;
+|User\nInterface|
+:12. Display\nresult message;
+stop
+
+@enduml

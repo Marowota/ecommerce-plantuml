@@ -10,7 +10,6 @@ scale 3
 |Product\nRepository|
 |User\nInterface|
 start
-repeat
 :1. Display product list;
 |Admin|
 :2. Select product to delete;
