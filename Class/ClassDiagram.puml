@@ -72,32 +72,32 @@ class Review{
 }
 
 ' User
-class ApplicationUser{
-    
-    - cart: Cart
-    - addresses: Set<Address>
-    - reviews: Set<Review>
-    - orders: Set<Order>
-}
-
-
-class Account{
+class User{
     - id: long
     - name: string
     - email: string
     - phone: string
     - password: string
     - avatar: string
-    - role: string
+    - cart: Cart
+    - addresses: Set<Address>
+    - reviews: Set<Review>
+    - orders: Set<Order>
+    - role: Set<Role>
 }
 
-class Manager{
-    
+
+class Role{
+    - id: long
+    - name: string
+    - users: Set<User>
 }
 
-class Employee{
-    
+class UserRole{
+    - role_id: long
+    - user_id: long
 }
+
 
 class Address{
     - id: long
@@ -118,14 +118,9 @@ class Address{
 class Cart{
     - id: long
     - cart_details: List<CartDetail>
-}
-
-class CartDetail{
-    - id: long
+    - userId: long
+    - productId: long
     - quantity: int
-    - seller: Seller
-    - cart: Cart
-    - product: Product
 }
 
 ' Order
@@ -165,17 +160,15 @@ Product "1..*" --o "1" Order
 Product "1" *-- "1..*" ProductOption
 Product "1..*" --o "1" Category
 
-ApplicationUser "1" *-- "1..*" Address
-ApplicationUser "1" *-- "1..*" Review
+User "1" *-- "1..*" Address
+User "1" *-- "1..*" Review
 
-Cart "1" --* "1..*" ApplicationUser
-Cart "1" *-- "1..*" CartDetail
+Cart "1" --* "1..*" User
 
-Order "1..*" --* "1" ApplicationUser
+Order "1..*" --* "1" User
 Order "1" -- "1..*" Address
 
-Account <|-- ApplicationUser
-Account <|-- Manager
-Account <|-- Employee
+UserRole "1..*" -- "1" User
+UserRole "1..*" -- "1" Role
 
 @enduml
