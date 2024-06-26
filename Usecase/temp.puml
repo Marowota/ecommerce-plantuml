@@ -1,0 +1,51 @@
+@startuml MaiFileManager
+skin rose
+scale 3
+
+left to right direction
+
+actor AWS as aws
+actor User as user
+
+rectangle "MaiFileManager" {
+    usecase (Hiển thị file) as show
+    usecase (Sort file) as sort
+    usecase (Tìm kiếm file) as search
+    usecase (Mở file) as open
+    usecase (Copy file) as copy
+    usecase (Paste file) as paste
+    usecase (Delete file) as delete
+    usecase (Thêm file vào danh sách yêu thích) as favorite
+    usecase (Đổi tên file) as rename
+    usecase (Xem file mở gần đây) as recent
+    usecase (Đăng nhập AWS bằng token) as login
+    usecase (Xác minh token) as verify
+    usecase (Xuất thông báo lỗi) as error
+    usecase (Đổi theme app) as ct
+    usecase (Đổi default sort) as defSort
+    usecase (Xem danh sách file yêu thích) as favList
+}
+
+show -- aws
+recent -- aws
+login -- aws
+
+' login -- verify
+' login -- error
+
+user -- show
+user -- sort
+user -- search
+user -- open
+user -- copy
+user -- paste
+user -- delete
+user -- favorite
+user -- rename
+user -- recent
+user -- login
+user -- ct
+user -- defSort
+user -- favList
+
+@enduml
